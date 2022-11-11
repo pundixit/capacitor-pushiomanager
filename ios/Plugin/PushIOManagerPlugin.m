@@ -1,0 +1,75 @@
+#import <Foundation/Foundation.h>
+#import <Capacitor/Capacitor.h>
+
+// Define the plugin using the CAP_PLUGIN Macro, and
+// each method the plugin supports using the CAP_PLUGIN_METHOD macro.
+CAP_PLUGIN(PushIOManagerPlugin, "PushIOManager",
+           CAP_PLUGIN_METHOD(getAPIKey, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(getAccountToken, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(setExternalDeviceTrackingID, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(getExternalDeviceTrackingID,CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(setAdvertisingID, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(getAdvertisingID, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(getExternalDeviceTrackingID, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(getDeviceID, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(getLibVersion, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(setLogLevel, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(setLoggingEnabled, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(setCrashLoggingEnabled, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(isCrashLoggingEnabled, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(configure, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(registerApp, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(unregisterApp, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(registerForAllRemoteNotificationTypes, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(registerForAllRemoteNotificationTypesWithCategories, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(registerForNotificationAuthorizations, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(declarePreference, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(getPreferences, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(getPreference, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(setStringPreference, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(setNumberPreference, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(setBooleanPreference, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(removePreference, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(clearAllPreferences, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(registerUserId,CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(getRegisteredUserId,CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(unregisterUserId,CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(setDelayRegistration,CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(isDelayRegistration,CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(setInterceptOpenURL,CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(getNotificationStacked,CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(trackEvent,CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(trackEngagement,CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(trackConversionEvent,CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(isMessageCenterEnabled,CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(setMessageCenterEnabled, CAPPluginReturnNone);
+           CAP_PLUGIN_METHOD(fetchMessagesForMessageCenter,CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(fetchRichContentForMessage , CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(onMessageCenterViewVisible ,CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(onMessageCenterViewFinish ,CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(resetMessageCenter,CAPPluginReturnNone);
+           CAP_PLUGIN_METHOD(trackMessageCenterOpenEngagement,CAPPluginReturnNone);
+           CAP_PLUGIN_METHOD(trackMessageCenterDisplayEngagement,CAPPluginReturnNone);
+           CAP_PLUGIN_METHOD(clearInAppMessages,CAPPluginReturnNone);
+           CAP_PLUGIN_METHOD(setInAppFetchEnabled, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(getInAppMessageBannerHeight,CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(setInAppMessageBannerHeight,CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(setStatusBarHiddenForIAMBannerInterstitial,CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(isStatusBarHiddenForIAMBannerInterstitial,CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(getBadgeCount,CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(setBadgeCount,CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(resetBadgeCount,CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(isResponsysPush,CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(getEngagementTimestamp,CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(getEngagementMaxAge,CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(isRichPushDelaySet,CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(showRichPushMessage, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(setDelayRichPushDisplay, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(resetEngagementContext, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(getExecuteRsysWebUrl, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(setExecuteRsysWebUrl, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(onGeoRegionEntered, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(onGeoRegionExited, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(onBeaconRegionEntered, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(onBeaconRegionExited, CAPPluginReturnPromise);
+);

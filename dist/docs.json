@@ -1,0 +1,3416 @@
+{
+  "api": {
+    "name": "PushIOManagerPlugin",
+    "slug": "pushiomanagerplugin",
+    "docs": "",
+    "tags": [],
+    "methods": [
+      {
+        "name": "getAPIKey",
+        "signature": "() => Promise<Callback>",
+        "parameters": [],
+        "returns": "Promise<Callback>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "success Success callback."
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback."
+          },
+          {
+            "name": "memberof",
+            "text": "PushIOManager"
+          }
+        ],
+        "docs": "Gets the API Key used by the device to register with Responsys.",
+        "complexTypes": [
+          "Callback"
+        ],
+        "slug": "getapikey"
+      },
+      {
+        "name": "getAccountToken",
+        "signature": "() => Promise<Callback>",
+        "parameters": [],
+        "returns": "Promise<Callback>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "success Success callback."
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback."
+          },
+          {
+            "name": "memberof",
+            "text": "PushIOManager"
+          }
+        ],
+        "docs": "Gets the Account Token used by the device to register with Responsys.",
+        "complexTypes": [
+          "Callback"
+        ],
+        "slug": "getaccounttoken"
+      },
+      {
+        "name": "overwriteApiKey",
+        "signature": "(apiKey: string) => Promise<Callback>",
+        "parameters": [
+          {
+            "name": "apiKey",
+            "docs": "",
+            "type": "string"
+          }
+        ],
+        "returns": "Promise<Callback>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "apiKey"
+          },
+          {
+            "name": "param",
+            "text": "success Success callback."
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback.\nandroid only API"
+          }
+        ],
+        "docs": "",
+        "complexTypes": [
+          "Callback"
+        ],
+        "slug": "overwriteapikey"
+      },
+      {
+        "name": "overwriteAccountToken",
+        "signature": "(accountToken: string) => Promise<Callback>",
+        "parameters": [
+          {
+            "name": "accountToken",
+            "docs": "",
+            "type": "string"
+          }
+        ],
+        "returns": "Promise<Callback>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "accountToken"
+          },
+          {
+            "name": "param",
+            "text": "success Success callback."
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback.\nandroid only API"
+          }
+        ],
+        "docs": "",
+        "complexTypes": [
+          "Callback"
+        ],
+        "slug": "overwriteaccounttoken"
+      },
+      {
+        "name": "setExternalDeviceTrackingID",
+        "signature": "(trackingId: String) => Promise<Callback>",
+        "parameters": [
+          {
+            "name": "trackingId",
+            "docs": "External Device Tracking ID.",
+            "type": "String"
+          }
+        ],
+        "returns": "Promise<Callback>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "trackingId External Device Tracking ID."
+          },
+          {
+            "name": "param",
+            "text": "success Success callback."
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback."
+          },
+          {
+            "name": "memberof",
+            "text": "PushIOManager"
+          }
+        ],
+        "docs": "Sets the External Device Tracking ID. Useful if you have another ID for this device.",
+        "complexTypes": [
+          "Callback",
+          "String"
+        ],
+        "slug": "setexternaldevicetrackingid"
+      },
+      {
+        "name": "getExternalDeviceTrackingID",
+        "signature": "() => Promise<Callback>",
+        "parameters": [],
+        "returns": "Promise<Callback>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "success Success callback."
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback."
+          },
+          {
+            "name": "memberof",
+            "text": "PushIOManager"
+          }
+        ],
+        "docs": "Gets the External Device Tracking ID.",
+        "complexTypes": [
+          "Callback"
+        ],
+        "slug": "getexternaldevicetrackingid"
+      },
+      {
+        "name": "setAdvertisingID",
+        "signature": "(adid: string) => Promise<Callback>",
+        "parameters": [
+          {
+            "name": "adid",
+            "docs": "Advertising ID.",
+            "type": "string"
+          }
+        ],
+        "returns": "Promise<Callback>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "adid Advertising ID."
+          },
+          {
+            "name": "param",
+            "text": "success Success callback."
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback."
+          },
+          {
+            "name": "memberof",
+            "text": "PushIOManager"
+          }
+        ],
+        "docs": "Sets the Advertising ID.",
+        "complexTypes": [
+          "Callback"
+        ],
+        "slug": "setadvertisingid"
+      },
+      {
+        "name": "getAdvertisingID",
+        "signature": "() => Promise<Callback>",
+        "parameters": [],
+        "returns": "Promise<Callback>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "success Success callback."
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback."
+          },
+          {
+            "name": "memberof",
+            "text": "PushIOManager"
+          }
+        ],
+        "docs": "Gets the Advertising ID.",
+        "complexTypes": [
+          "Callback"
+        ],
+        "slug": "getadvertisingid"
+      },
+      {
+        "name": "getDeviceID",
+        "signature": "() => Promise<Callback>",
+        "parameters": [],
+        "returns": "Promise<Callback>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "success Success callback with device ID value."
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback."
+          }
+        ],
+        "docs": "Gets the Responsys Device ID.",
+        "complexTypes": [
+          "Callback"
+        ],
+        "slug": "getdeviceid"
+      },
+      {
+        "name": "getLibVersion",
+        "signature": "() => Promise<Callback>",
+        "parameters": [],
+        "returns": "Promise<Callback>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "success Success callback with the SDK version value."
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback."
+          }
+        ],
+        "docs": "Gets the Responsys SDK version.",
+        "complexTypes": [
+          "Callback"
+        ],
+        "slug": "getlibversion"
+      },
+      {
+        "name": "registerUserId",
+        "signature": "(options: { userId: string; }) => Promise<Callback>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ userId: string; }"
+          }
+        ],
+        "returns": "Promise<Callback>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "userId User ID"
+          },
+          {
+            "name": "param",
+            "text": "success Success callback."
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback."
+          },
+          {
+            "name": "memberof",
+            "text": "PushIOManager"
+          }
+        ],
+        "docs": "Associates this app installation with the provided userId in Responsys.\n<br/>Generally used when the user logs in.",
+        "complexTypes": [
+          "Callback"
+        ],
+        "slug": "registeruserid"
+      },
+      {
+        "name": "getRegisteredUserId",
+        "signature": "() => Promise<Callback>",
+        "parameters": [],
+        "returns": "Promise<Callback>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "success Success callback."
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback."
+          },
+          {
+            "name": "memberof",
+            "text": "PushIOManager"
+          }
+        ],
+        "docs": "Gets the User ID set earlier using [registerUserId]{@link PushIOManager#registerUserId}.",
+        "complexTypes": [
+          "Callback"
+        ],
+        "slug": "getregistereduserid"
+      },
+      {
+        "name": "unregisterUserId",
+        "signature": "() => Promise<Callback>",
+        "parameters": [],
+        "returns": "Promise<Callback>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "success Success callback."
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback."
+          },
+          {
+            "name": "memberof",
+            "text": "PushIOManager"
+          }
+        ],
+        "docs": "Removes association between this app installation and the User ID that \nwas set earlier using [registerUserId]{@link PushIOManager#registerUserId}.\n<br/>Generally used when the user logs out.",
+        "complexTypes": [
+          "Callback"
+        ],
+        "slug": "unregisteruserid"
+      },
+      {
+        "name": "setLogLevel",
+        "signature": "(options: { logLevel: number; }) => Promise<void>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ logLevel: number; }"
+          }
+        ],
+        "returns": "Promise<void>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "logLevel"
+          }
+        ],
+        "docs": "Sets the log level.",
+        "complexTypes": [],
+        "slug": "setloglevel"
+      },
+      {
+        "name": "setLoggingEnabled",
+        "signature": "(options: { isLoggingEnabled: boolean; }) => Promise<Callback>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ isLoggingEnabled: boolean; }"
+          }
+        ],
+        "returns": "Promise<Callback>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "isLoggingEnabled"
+          },
+          {
+            "name": "param",
+            "text": "success Success callback with boolean value."
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback."
+          }
+        ],
+        "docs": "",
+        "complexTypes": [
+          "Callback"
+        ],
+        "slug": "setloggingenabled"
+      },
+      {
+        "name": "configure",
+        "signature": "(options: { filename: string; }) => Promise<Callback>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ filename: string; }"
+          }
+        ],
+        "returns": "Promise<Callback>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "fileName A valid filename."
+          },
+          {
+            "name": "param",
+            "text": "success Success callback."
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback."
+          }
+        ],
+        "docs": "Configures the SDK using the provided config file name.\n\n<br/><br/>For Android, the file should be placed in the android <i>src/main/assets</i> directory",
+        "complexTypes": [
+          "Callback"
+        ],
+        "slug": "configure"
+      },
+      {
+        "name": "setDelayRegistration",
+        "signature": "(options: { delayRegistration: boolean; }) => Promise<Callback>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ delayRegistration: boolean; }"
+          }
+        ],
+        "returns": "Promise<Callback>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "delayRegistration"
+          }
+        ],
+        "docs": "Sets delay in registration.",
+        "complexTypes": [
+          "Callback"
+        ],
+        "slug": "setdelayregistration"
+      },
+      {
+        "name": "isDelayRegistration",
+        "signature": "() => Promise<Callback>",
+        "parameters": [],
+        "returns": "Promise<Callback>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "success Success callback."
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback."
+          }
+        ],
+        "docs": "This api provides the status, if `setDelayRegistration` is enabled of not.",
+        "complexTypes": [
+          "Callback"
+        ],
+        "slug": "isdelayregistration"
+      },
+      {
+        "name": "registerApp",
+        "signature": "(options: { useLocation: boolean; }) => Promise<Callback>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ useLocation: boolean; }"
+          }
+        ],
+        "returns": "Promise<Callback>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "useLocation Whether to send location data along with the registration request. Passing `true` will show the default system location permission dialog prompt.\n(User location is not available on iOS platform.)"
+          },
+          {
+            "name": "param",
+            "text": "success Success callback."
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback."
+          }
+        ],
+        "docs": "Registers this app installation with Responsys.",
+        "complexTypes": [
+          "Callback"
+        ],
+        "slug": "registerapp"
+      },
+      {
+        "name": "registerForAllRemoteNotificationTypes",
+        "signature": "() => Promise<Callback>",
+        "parameters": [],
+        "returns": "Promise<Callback>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "success Success callback."
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback."
+          }
+        ],
+        "docs": "Asks user permissions for all push notifications types. i.e.: Sound/Badge/Alert types. \n\nOnly available on iOS platform.",
+        "complexTypes": [
+          "Callback"
+        ],
+        "slug": "registerforallremotenotificationtypes"
+      },
+      {
+        "name": "registerForAllRemoteNotificationTypesWithCategories",
+        "signature": "(options: { categories: InteractiveNotificationCategory[]; }) => Promise<Callback>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ categories: InteractiveNotificationCategory[]; }"
+          }
+        ],
+        "returns": "Promise<Callback>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "categories Contains the notification categories definitions."
+          },
+          {
+            "name": "param",
+            "text": "success Success callback."
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback."
+          }
+        ],
+        "docs": "Asks user permissions for all push notifications types. i.e.: Sound/Badge/Alert types. You can pass the notification categories definitions to register. \n\nOnly available on iOS platform.",
+        "complexTypes": [
+          "Callback",
+          "InteractiveNotificationCategory"
+        ],
+        "slug": "registerforallremotenotificationtypeswithcategories"
+      },
+      {
+        "name": "registerForNotificationAuthorizations",
+        "signature": "(options: { authOptions: number; categories: InteractiveNotificationCategory[]; }) => Promise<Callback>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ authOptions: number; categories: InteractiveNotificationCategory[]; }"
+          }
+        ],
+        "returns": "Promise<Callback>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "authOptions Notification auth types i.e.: Sound/Badge/Alert."
+          },
+          {
+            "name": "param",
+            "text": "categories Contains the notification categories definitions."
+          },
+          {
+            "name": "param",
+            "text": "success Success callback."
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback."
+          }
+        ],
+        "docs": "Asks user permissions for all push notifications types. i.e.: Sound/Badge/Alert types.\n\nIf readyForRegistrationCompHandler is not set, then provided completionHandler is assigned to it, to let application have access when SDK receives deviceToken.\n\nOnly available on iOS platform.",
+        "complexTypes": [
+          "Callback",
+          "InteractiveNotificationCategory"
+        ],
+        "slug": "registerfornotificationauthorizations"
+      },
+      {
+        "name": "unregisterApp",
+        "signature": "() => Promise<Callback>",
+        "parameters": [],
+        "returns": "Promise<Callback>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "success Success callback."
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback."
+          }
+        ],
+        "docs": "Unregisters this app installation with Responsys. This will prevent the app from receiving push notifications.",
+        "complexTypes": [
+          "Callback"
+        ],
+        "slug": "unregisterapp"
+      },
+      {
+        "name": "declarePreference",
+        "signature": "(options: { key: string; label: string; type: string; }) => Promise<void>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ key: string; label: string; type: string; }"
+          }
+        ],
+        "returns": "Promise<void>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "key Unique ID for this preference."
+          },
+          {
+            "name": "param",
+            "text": "label Human-Readable description of this preference."
+          },
+          {
+            "name": "param",
+            "text": "type Data type of this preference. Possible values: 'STRING', 'NUMBER', 'BOOLEAN'."
+          },
+          {
+            "name": "param",
+            "text": "success Success callback."
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback."
+          },
+          {
+            "name": "memberof",
+            "text": "PushIOManager"
+          }
+        ],
+        "docs": "Declares a preference that will be used later with [set...Preference()]{@link PushIOManager#setStringPreference}",
+        "complexTypes": [],
+        "slug": "declarepreference"
+      },
+      {
+        "name": "getPreferences",
+        "signature": "() => Promise<Preference[]>",
+        "parameters": [],
+        "returns": "Promise<Preference[]>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "success Success callback."
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback."
+          },
+          {
+            "name": "returns",
+            "text": "Array of [Preference]{@link Preference} in success callback."
+          },
+          {
+            "name": "memberof",
+            "text": "PushIOManager"
+          }
+        ],
+        "docs": "Gets all preferences set earlier using [set...Preference()]{@link PushIOManager#setStringPreference}.",
+        "complexTypes": [
+          "Preference"
+        ],
+        "slug": "getpreferences"
+      },
+      {
+        "name": "getPreference",
+        "signature": "(options: { key: string; }) => Promise<Callback>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ key: string; }"
+          }
+        ],
+        "returns": "Promise<Callback>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "key Unique ID for this preference."
+          },
+          {
+            "name": "param",
+            "text": "success Success callback."
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback."
+          },
+          {
+            "name": "returns",
+            "text": "Single preference in success callback."
+          },
+          {
+            "name": "memberof",
+            "text": "PushIOManager"
+          }
+        ],
+        "docs": "Gets a single preference for the provided key.",
+        "complexTypes": [
+          "Callback"
+        ],
+        "slug": "getpreference"
+      },
+      {
+        "name": "setStringPreference",
+        "signature": "(options: { key: string; value: string; }) => Promise<Callback>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ key: string; value: string; }"
+          }
+        ],
+        "returns": "Promise<Callback>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "key Unique ID for this preference."
+          },
+          {
+            "name": "param",
+            "text": "value Value of type String."
+          },
+          {
+            "name": "param",
+            "text": "success Success callback."
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback."
+          },
+          {
+            "name": "memberof",
+            "text": "PushIOManager"
+          }
+        ],
+        "docs": "Saves the key/value along with the label provided earlier in [declarePreference]{@link PushIOManager#declarePreference}",
+        "complexTypes": [
+          "Callback"
+        ],
+        "slug": "setstringpreference"
+      },
+      {
+        "name": "setNumberPreference",
+        "signature": "(options: { key: string; value: number; }) => Promise<Callback>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ key: string; value: number; }"
+          }
+        ],
+        "returns": "Promise<Callback>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "key Unique ID for this preference."
+          },
+          {
+            "name": "param",
+            "text": "value Value of type Number."
+          },
+          {
+            "name": "param",
+            "text": "success Success callback."
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback."
+          },
+          {
+            "name": "memberof",
+            "text": "PushIOManager"
+          }
+        ],
+        "docs": "Saves the key/value along with the label provided earlier in [declarePreference]{@link PushIOManager#declarePreference}",
+        "complexTypes": [
+          "Callback"
+        ],
+        "slug": "setnumberpreference"
+      },
+      {
+        "name": "setBooleanPreference",
+        "signature": "(options: { key: string; value: boolean; }) => Promise<Callback>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ key: string; value: boolean; }"
+          }
+        ],
+        "returns": "Promise<Callback>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "key Unique ID for this preference."
+          },
+          {
+            "name": "param",
+            "text": "value Value of type Boolean."
+          },
+          {
+            "name": "param",
+            "text": "success Success callback."
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback."
+          },
+          {
+            "name": "memberof",
+            "text": "PushIOManager"
+          }
+        ],
+        "docs": "Saves the key/value along with the label provided earlier in [declarePreference]{@link PushIOManager#declarePreference}",
+        "complexTypes": [
+          "Callback"
+        ],
+        "slug": "setbooleanpreference"
+      },
+      {
+        "name": "removePreference",
+        "signature": "(options: { key: string; }) => Promise<Callback>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ key: string; }"
+          }
+        ],
+        "returns": "Promise<Callback>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "key Unique ID for this preference."
+          },
+          {
+            "name": "param",
+            "text": "success Success callback."
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback."
+          },
+          {
+            "name": "memberof",
+            "text": "PushIOManager"
+          }
+        ],
+        "docs": "Removes preference data for the given key.",
+        "complexTypes": [
+          "Callback"
+        ],
+        "slug": "removepreference"
+      },
+      {
+        "name": "clearAllPreferences",
+        "signature": "() => Promise<Callback>",
+        "parameters": [],
+        "returns": "Promise<Callback>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "success Success callback."
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback."
+          },
+          {
+            "name": "memberof",
+            "text": "PushIOManager"
+          }
+        ],
+        "docs": "Removes all preference data.",
+        "complexTypes": [
+          "Callback"
+        ],
+        "slug": "clearallpreferences"
+      },
+      {
+        "name": "setNotificationsStacked",
+        "signature": "(options: { isNotificationStacked: boolean; }) => Promise<Callback>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ isNotificationStacked: boolean; }"
+          }
+        ],
+        "returns": "Promise<Callback>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "Callback"
+        ],
+        "slug": "setnotificationsstacked"
+      },
+      {
+        "name": "getNotificationStacked",
+        "signature": "() => Promise<Callback>",
+        "parameters": [],
+        "returns": "Promise<Callback>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "Callback"
+        ],
+        "slug": "getnotificationstacked"
+      },
+      {
+        "name": "trackEvent",
+        "signature": "(options: { eventName: string; properties: object; }) => Promise<Callback>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ eventName: string; properties: object; }"
+          }
+        ],
+        "returns": "Promise<Callback>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "eventName"
+          },
+          {
+            "name": "param",
+            "text": "properties Custom data."
+          },
+          {
+            "name": "param",
+            "text": "success Success callback."
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback."
+          },
+          {
+            "name": "memberof",
+            "text": "PushIOManager"
+          }
+        ],
+        "docs": "Records pre-defined and custom events.<br/>You can set extra properties specific to this event via the properties parameter.",
+        "complexTypes": [
+          "Callback"
+        ],
+        "slug": "trackevent"
+      },
+      {
+        "name": "trackEngagement",
+        "signature": "(options: { metric: EngagementType; properties: object; }) => Promise<Callback>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ metric: EngagementType; properties: object; }"
+          }
+        ],
+        "returns": "Promise<Callback>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "metric One of [engagementType]{@link PushIOManager#engagementType}"
+          },
+          {
+            "name": "param",
+            "text": "properties Custom data to be sent along with this request."
+          },
+          {
+            "name": "param",
+            "text": "success Success callback."
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback."
+          },
+          {
+            "name": "memberof",
+            "text": "PushIOManager"
+          }
+        ],
+        "docs": "Sends push engagement information to Responsys.",
+        "complexTypes": [
+          "Callback",
+          "EngagementType"
+        ],
+        "slug": "trackengagement"
+      },
+      {
+        "name": "fetchMessagesForMessageCenter",
+        "signature": "(options: { messageCenter: string; }) => Promise<MessageCenterResult>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ messageCenter: string; }"
+          }
+        ],
+        "returns": "Promise<MessageCenterResult>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "messageCenter"
+          },
+          {
+            "name": "param",
+            "text": "success Success callback."
+          },
+          {
+            "name": "param",
+            "text": "success.messageCenter"
+          },
+          {
+            "name": "param",
+            "text": "success.messages"
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback."
+          },
+          {
+            "name": "param",
+            "text": "failure.messageCenter"
+          },
+          {
+            "name": "param",
+            "text": "failure.errorReason"
+          },
+          {
+            "name": "memberof",
+            "text": "PushIOManager"
+          }
+        ],
+        "docs": "Fetches messages for the given message center.",
+        "complexTypes": [
+          "MessageCenterResult"
+        ],
+        "slug": "fetchmessagesformessagecenter"
+      },
+      {
+        "name": "isMessageCenterEnabled",
+        "signature": "() => Promise<Callback>",
+        "parameters": [],
+        "returns": "Promise<Callback>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "success Success callback with boolean value."
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback."
+          }
+        ],
+        "docs": "",
+        "complexTypes": [
+          "Callback"
+        ],
+        "slug": "ismessagecenterenabled"
+      },
+      {
+        "name": "setMessageCenterEnabled",
+        "signature": "(options: { messageCenterEnabled: boolean; }) => Promise<Callback>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ messageCenterEnabled: boolean; }"
+          }
+        ],
+        "returns": "Promise<Callback>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "messageCenterEnabled"
+          },
+          {
+            "name": "param",
+            "text": "success Success callback."
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback."
+          }
+        ],
+        "docs": "",
+        "complexTypes": [
+          "Callback"
+        ],
+        "slug": "setmessagecenterenabled"
+      },
+      {
+        "name": "fetchRichContentForMessage",
+        "signature": "(options: { messageID: string; }) => Promise<MCRichContentResult>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ messageID: string; }"
+          }
+        ],
+        "returns": "Promise<MCRichContentResult>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "messageID"
+          },
+          {
+            "name": "param",
+            "text": "success Success callback."
+          },
+          {
+            "name": "param",
+            "text": "success.messageId"
+          },
+          {
+            "name": "param",
+            "text": "success.richContent"
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback."
+          },
+          {
+            "name": "param",
+            "text": "failure.messageId"
+          },
+          {
+            "name": "param",
+            "text": "failure.errorReason"
+          }
+        ],
+        "docs": "Fetches rich content for the given message ID.",
+        "complexTypes": [
+          "MCRichContentResult"
+        ],
+        "slug": "fetchrichcontentformessage"
+      },
+      {
+        "name": "setMessageCenterBadgingEnabled",
+        "signature": "(options: { messageCenterBadgingEnabled: boolean; }) => Promise<Callback>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ messageCenterBadgingEnabled: boolean; }"
+          }
+        ],
+        "returns": "Promise<Callback>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "messageCenterBadgingEnabled"
+          },
+          {
+            "name": "param",
+            "text": "success Success callback."
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback.\n//android API"
+          }
+        ],
+        "docs": "",
+        "complexTypes": [
+          "Callback"
+        ],
+        "slug": "setmessagecenterbadgingenabled"
+      },
+      {
+        "name": "resetMessageCenter",
+        "signature": "() => Promise<Callback>",
+        "parameters": [],
+        "returns": "Promise<Callback>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "success Success callback."
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback."
+          }
+        ],
+        "docs": "Removes all Message Center messages from the SDK's cache.<br/><br/>This does not affect your local cache of the messages.",
+        "complexTypes": [
+          "Callback"
+        ],
+        "slug": "resetmessagecenter"
+      },
+      {
+        "name": "onMessageCenterViewVisible",
+        "signature": "() => Promise<Callback>",
+        "parameters": [],
+        "returns": "Promise<Callback>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "success Success callback."
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback."
+          }
+        ],
+        "docs": "Informs the SDK that the Message Center view is visible.\n\n<br/><br/>This must be used along with [onMessageCenterViewFinish]{@link PushIOManager#onMessageCenterViewFinish} to track Message Center message displays.",
+        "complexTypes": [
+          "Callback"
+        ],
+        "slug": "onmessagecenterviewvisible"
+      },
+      {
+        "name": "onMessageCenterViewFinish",
+        "signature": "() => Promise<Callback>",
+        "parameters": [],
+        "returns": "Promise<Callback>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "success Success callback."
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback."
+          }
+        ],
+        "docs": "Informs the SDK that the Message Center view is no longer visible.\n\n<br/><br/>This must be used along with [onMessageCenterViewVisible]{@link PushIOManager#onMessageCenterViewVisible} to track Message Center message displays.",
+        "complexTypes": [
+          "Callback"
+        ],
+        "slug": "onmessagecenterviewfinish"
+      },
+      {
+        "name": "addListener",
+        "signature": "(eventName: 'onMessageCenterUpdated', listenerFunc: (message: Callback) => void) => Promise<PluginListenerHandle> & PluginListenerHandle",
+        "parameters": [
+          {
+            "name": "eventName",
+            "docs": "",
+            "type": "'onMessageCenterUpdated'"
+          },
+          {
+            "name": "listenerFunc",
+            "docs": "",
+            "type": "(message: Callback) => void"
+          }
+        ],
+        "returns": "Promise<PluginListenerHandle> & PluginListenerHandle",
+        "tags": [
+          {
+            "name": "param",
+            "text": "success"
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback."
+          }
+        ],
+        "docs": "Returns the list of message centers that have been fetched.",
+        "complexTypes": [
+          "PluginListenerHandle",
+          "Callback"
+        ],
+        "slug": "addlisteneronmessagecenterupdated"
+      },
+      {
+        "name": "trackMessageCenterOpenEngagement",
+        "signature": "(options: { messageID: string; }) => Promise<Callback>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ messageID: string; }"
+          }
+        ],
+        "returns": "Promise<Callback>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "messageID"
+          },
+          {
+            "name": "param",
+            "text": "success Success callback."
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback."
+          }
+        ],
+        "docs": "Sends Message Center message engagement to Responsys.\n\n<br/><br/>This should be called when the message-detail view is visible to the user.",
+        "complexTypes": [
+          "Callback"
+        ],
+        "slug": "trackmessagecenteropenengagement"
+      },
+      {
+        "name": "trackMessageCenterDisplayEngagement",
+        "signature": "(options: { messageID: string; }) => Promise<Callback>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ messageID: string; }"
+          }
+        ],
+        "returns": "Promise<Callback>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "messageID"
+          },
+          {
+            "name": "param",
+            "text": "success Success callback."
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback."
+          }
+        ],
+        "docs": "Sends Message Center message engagement to Responsys.\n\n<br/><br/>This should be called when the message-list view is visible to the user.",
+        "complexTypes": [
+          "Callback"
+        ],
+        "slug": "trackmessagecenterdisplayengagement"
+      },
+      {
+        "name": "getEngagementTimestamp",
+        "signature": "() => Promise<Callback>",
+        "parameters": [],
+        "returns": "Promise<Callback>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "success Success callback as a string value."
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback."
+          }
+        ],
+        "docs": "",
+        "complexTypes": [
+          "Callback"
+        ],
+        "slug": "getengagementtimestamp"
+      },
+      {
+        "name": "getEngagementMaxAge",
+        "signature": "() => Promise<Callback>",
+        "parameters": [],
+        "returns": "Promise<Callback>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "success Success callback as a number value."
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback."
+          }
+        ],
+        "docs": "",
+        "complexTypes": [
+          "Callback"
+        ],
+        "slug": "getengagementmaxage"
+      },
+      {
+        "name": "resetEngagementContext",
+        "signature": "() => Promise<Callback>",
+        "parameters": [],
+        "returns": "Promise<Callback>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "success Success callback."
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback."
+          }
+        ],
+        "docs": "Removes push engagement related data for a session.\n\n<br/><br/>This will prevent further engagements from being reported until the app is opened again via a push notification.",
+        "complexTypes": [
+          "Callback"
+        ],
+        "slug": "resetengagementcontext"
+      },
+      {
+        "name": "setDefaultSmallIcon",
+        "signature": "(options: { icon: number; }) => Promise<Callback>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ icon: number; }"
+          }
+        ],
+        "returns": "Promise<Callback>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "icon Resource ID of the icon."
+          },
+          {
+            "name": "param",
+            "text": "success Success callback."
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback.\n//android only API"
+          }
+        ],
+        "docs": "Sets the small icon used in notification display.",
+        "complexTypes": [
+          "Callback"
+        ],
+        "slug": "setdefaultsmallicon"
+      },
+      {
+        "name": "setDefaultLargeIcon",
+        "signature": "(options: { icon: number; }) => Promise<Callback>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ icon: number; }"
+          }
+        ],
+        "returns": "Promise<Callback>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "icon Resource ID of the icon."
+          },
+          {
+            "name": "param",
+            "text": "success Success callback."
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback.\n//android only API"
+          }
+        ],
+        "docs": "Sets the large icon used in notification display.",
+        "complexTypes": [
+          "Callback"
+        ],
+        "slug": "setdefaultlargeicon"
+      },
+      {
+        "name": "setBadgeCount",
+        "signature": "(options: { badgeCount: number; forceSetBadge: boolean; }) => Promise<Callback>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ badgeCount: number; forceSetBadge: boolean; }"
+          }
+        ],
+        "returns": "Promise<Callback>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "badgeCount"
+          },
+          {
+            "name": "param",
+            "text": "forceSetBadge Force a server-sync for the newly set badge count."
+          },
+          {
+            "name": "param",
+            "text": "success Success callback."
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback."
+          }
+        ],
+        "docs": "Sets the badge count on app icon for the no. of Message Center messages.",
+        "complexTypes": [
+          "Callback"
+        ],
+        "slug": "setbadgecount"
+      },
+      {
+        "name": "getBadgeCount",
+        "signature": "() => Promise<Callback>",
+        "parameters": [],
+        "returns": "Promise<Callback>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "success Success callback as a number value."
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback."
+          }
+        ],
+        "docs": "Gets the current badge count for Message Center messages.",
+        "complexTypes": [
+          "Callback"
+        ],
+        "slug": "getbadgecount"
+      },
+      {
+        "name": "resetBadgeCount",
+        "signature": "(options: { forceSetBadge: boolean; }) => Promise<Callback>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ forceSetBadge: boolean; }"
+          }
+        ],
+        "returns": "Promise<Callback>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "forceSetBadge Force a server-sync for the newly set badge count."
+          },
+          {
+            "name": "param",
+            "text": "success Success callback."
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback."
+          }
+        ],
+        "docs": "Resets the badge count for Message Center messages.<br/>This is equivalent to calling [setBadgeCount(0, true)]{@link PushIOManager#setsetBadgeCount}",
+        "complexTypes": [
+          "Callback"
+        ],
+        "slug": "resetbadgecount"
+      },
+      {
+        "name": "resetMessageCenter",
+        "signature": "() => Promise<Callback>",
+        "parameters": [],
+        "returns": "Promise<Callback>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "success Success callback."
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback."
+          }
+        ],
+        "docs": "Removes all Message Center messages from the SDK's cache.<br/><br/>This does not affect your local cache of the messages.",
+        "complexTypes": [
+          "Callback"
+        ],
+        "slug": "resetmessagecenter"
+      },
+      {
+        "name": "setInAppFetchEnabled",
+        "signature": "(options: { inAppFetchEnabled: boolean; }) => Promise<Callback>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ inAppFetchEnabled: boolean; }"
+          }
+        ],
+        "returns": "Promise<Callback>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "inAppFetchEnabled"
+          },
+          {
+            "name": "param",
+            "text": "success Success callback."
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback."
+          }
+        ],
+        "docs": "",
+        "complexTypes": [
+          "Callback"
+        ],
+        "slug": "setinappfetchenabled"
+      },
+      {
+        "name": "clearInAppMessages",
+        "signature": "() => Promise<Callback>",
+        "parameters": [],
+        "returns": "Promise<Callback>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "success Success callback."
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback."
+          }
+        ],
+        "docs": "te\nRemoves all In-App messages from the SDK's cache.",
+        "complexTypes": [
+          "Callback"
+        ],
+        "slug": "clearinappmessages"
+      },
+      {
+        "name": "setCrashLoggingEnabled",
+        "signature": "(options: { crashLoggingEnabled: boolean; }) => Promise<Callback>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ crashLoggingEnabled: boolean; }"
+          }
+        ],
+        "returns": "Promise<Callback>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "crashLoggingEnabled"
+          },
+          {
+            "name": "param",
+            "text": "success Success callback."
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback."
+          }
+        ],
+        "docs": "",
+        "complexTypes": [
+          "Callback"
+        ],
+        "slug": "setcrashloggingenabled"
+      },
+      {
+        "name": "isCrashLoggingEnabled",
+        "signature": "() => Promise<Callback>",
+        "parameters": [],
+        "returns": "Promise<Callback>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "success Success callback with boolean value."
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback."
+          }
+        ],
+        "docs": "",
+        "complexTypes": [
+          "Callback"
+        ],
+        "slug": "iscrashloggingenabled"
+      },
+      {
+        "name": "setDeviceToken",
+        "signature": "(deviceToken: string) => Promise<Callback>",
+        "parameters": [
+          {
+            "name": "deviceToken",
+            "docs": "",
+            "type": "string"
+          }
+        ],
+        "returns": "Promise<Callback>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "deviceToken"
+          },
+          {
+            "name": "param",
+            "text": "success Success callback."
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback.\n//Android only API"
+          }
+        ],
+        "docs": "",
+        "complexTypes": [
+          "Callback"
+        ],
+        "slug": "setdevicetoken"
+      },
+      {
+        "name": "clearInteractiveNotificationCategories",
+        "signature": "() => Promise<Callback>",
+        "parameters": [],
+        "returns": "Promise<Callback>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "success Success callback."
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback."
+          }
+        ],
+        "docs": "Removes all app-defined Interactive Notification categories from the SDK's cache.",
+        "complexTypes": [
+          "Callback"
+        ],
+        "slug": "clearinteractivenotificationcategories"
+      },
+      {
+        "name": "deleteInteractiveNotificationCategory",
+        "signature": "(options: { categoryID: string; }) => Promise<Callback>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ categoryID: string; }"
+          }
+        ],
+        "returns": "Promise<Callback>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "categoryID"
+          },
+          {
+            "name": "param",
+            "text": "success Success callback."
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback."
+          }
+        ],
+        "docs": "Removes app-defined Interactive Notification category.",
+        "complexTypes": [
+          "Callback"
+        ],
+        "slug": "deleteinteractivenotificationcategory"
+      },
+      {
+        "name": "getInteractiveNotificationCategory",
+        "signature": "(options: { categoryID: string; }) => Promise<Callback>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ categoryID: string; }"
+          }
+        ],
+        "returns": "Promise<Callback>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "categoryID"
+          },
+          {
+            "name": "param",
+            "text": "success Success callback."
+          },
+          {
+            "name": "param",
+            "text": "success.orcl_category"
+          },
+          {
+            "name": "param",
+            "text": "success.orcl_btns"
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback.\n// Android only API"
+          }
+        ],
+        "docs": "Gets a single Interactive Notification category for the given category ID.",
+        "complexTypes": [
+          "Callback"
+        ],
+        "slug": "getinteractivenotificationcategory"
+      },
+      {
+        "name": "addInteractiveNotificationCategory",
+        "signature": "(options: { notificationCategory: InteractiveNotificationCategory; }) => Promise<Callback>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ notificationCategory: InteractiveNotificationCategory; }"
+          }
+        ],
+        "returns": "Promise<Callback>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "notificationCategory"
+          },
+          {
+            "name": "param",
+            "text": "success Success callback."
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback.\nAndroid only API"
+          }
+        ],
+        "docs": "Adds a new app-defined Interactive Notification category.",
+        "complexTypes": [
+          "Callback",
+          "InteractiveNotificationCategory"
+        ],
+        "slug": "addinteractivenotificationcategory"
+      },
+      {
+        "name": "isResponsysPush",
+        "signature": "(options: { remoteMessage: RemoteMessage; }) => Promise<Callback>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ remoteMessage: RemoteMessage; }"
+          }
+        ],
+        "returns": "Promise<Callback>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "remoteMessage"
+          },
+          {
+            "name": "param",
+            "text": "success Success callback as a boolean value."
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback."
+          }
+        ],
+        "docs": "Returns `true` if the given push notification payload is from Responsys, `false` otherwise.",
+        "complexTypes": [
+          "Callback",
+          "RemoteMessage"
+        ],
+        "slug": "isresponsyspush"
+      },
+      {
+        "name": "handleMessage",
+        "signature": "(options: { remoteMessage: RemoteMessage; }) => Promise<Callback>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ remoteMessage: RemoteMessage; }"
+          }
+        ],
+        "returns": "Promise<Callback>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "remoteMessage"
+          },
+          {
+            "name": "param",
+            "text": "success Success callback."
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback.\nAndroid only API"
+          }
+        ],
+        "docs": "Request the SDK to process the given push notification payload.",
+        "complexTypes": [
+          "Callback",
+          "RemoteMessage"
+        ],
+        "slug": "handlemessage"
+      },
+      {
+        "name": "setExecuteRsysWebUrl",
+        "signature": "(options: { flag: boolean; }) => Promise<Pubweb>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ flag: boolean; }"
+          }
+        ],
+        "returns": "Promise<Pubweb>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "Pubweb"
+        ],
+        "slug": "setexecutersysweburl"
+      },
+      {
+        "name": "getExecuteRsysWebUrl",
+        "signature": "() => Promise<Callback>",
+        "parameters": [],
+        "returns": "Promise<Callback>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "Callback"
+        ],
+        "slug": "getexecutersysweburl"
+      },
+      {
+        "name": "getConversionUrl",
+        "signature": "() => Promise<Callback>",
+        "parameters": [],
+        "returns": "Promise<Callback>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "success Success callback as a string value."
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback."
+          }
+        ],
+        "docs": "",
+        "complexTypes": [
+          "Callback"
+        ],
+        "slug": "getconversionurl"
+      },
+      {
+        "name": "getRIAppId",
+        "signature": "() => Promise<Callback>",
+        "parameters": [],
+        "returns": "Promise<Callback>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "success Success callback as a number value."
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback.\nAndroid only API"
+          }
+        ],
+        "docs": "",
+        "complexTypes": [
+          "Callback"
+        ],
+        "slug": "getriappid"
+      },
+      {
+        "name": "onGeoRegionEntered",
+        "signature": "(options: { region: GeoRegion; }) => Promise<RegionResult>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ region: GeoRegion; }"
+          }
+        ],
+        "returns": "Promise<RegionResult>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "region"
+          },
+          {
+            "name": "param",
+            "text": "success Success callback."
+          },
+          {
+            "name": "param",
+            "text": "success.regionID"
+          },
+          {
+            "name": "param",
+            "text": "success.regionType"
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback."
+          }
+        ],
+        "docs": "Informs the SDK that the user has entered a geofence.",
+        "complexTypes": [
+          "RegionResult",
+          "GeoRegion"
+        ],
+        "slug": "ongeoregionentered"
+      },
+      {
+        "name": "onGeoRegionExited",
+        "signature": "(options: { region: GeoRegion; }) => Promise<RegionResult>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ region: GeoRegion; }"
+          }
+        ],
+        "returns": "Promise<RegionResult>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "region"
+          },
+          {
+            "name": "param",
+            "text": "success Success callback."
+          },
+          {
+            "name": "param",
+            "text": "success.regionID"
+          },
+          {
+            "name": "param",
+            "text": "success.regionType"
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback."
+          }
+        ],
+        "docs": "Informs the SDK that the user has exited a geofence.",
+        "complexTypes": [
+          "RegionResult",
+          "GeoRegion"
+        ],
+        "slug": "ongeoregionexited"
+      },
+      {
+        "name": "onBeaconRegionEntered",
+        "signature": "(options: { region: BeaconRegion; }) => Promise<RegionResult>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ region: BeaconRegion; }"
+          }
+        ],
+        "returns": "Promise<RegionResult>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "region"
+          },
+          {
+            "name": "param",
+            "text": "success Success callback."
+          },
+          {
+            "name": "param",
+            "text": "success.regionID"
+          },
+          {
+            "name": "param",
+            "text": "success.regionType"
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback."
+          }
+        ],
+        "docs": "Informs the SDK that the user has entered a beacon region.",
+        "complexTypes": [
+          "RegionResult",
+          "BeaconRegion"
+        ],
+        "slug": "onbeaconregionentered"
+      },
+      {
+        "name": "onBeaconRegionExited",
+        "signature": "(options: { region: BeaconRegion; }) => Promise<RegionResult>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ region: BeaconRegion; }"
+          }
+        ],
+        "returns": "Promise<RegionResult>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "region"
+          },
+          {
+            "name": "param",
+            "text": "success Success callback."
+          },
+          {
+            "name": "param",
+            "text": "success.regionID"
+          },
+          {
+            "name": "param",
+            "text": "success.regionType"
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback."
+          }
+        ],
+        "docs": "Informs the SDK that the user has exited a beacon region.",
+        "complexTypes": [
+          "RegionResult",
+          "BeaconRegion"
+        ],
+        "slug": "onbeaconregionexited"
+      },
+      {
+        "name": "addListener",
+        "signature": "(eventName: 'onDeepLinkReceived', listenerFunc: (URL: Pubweb) => void) => Promise<PluginListenerHandle> & PluginListenerHandle",
+        "parameters": [
+          {
+            "name": "eventName",
+            "docs": "",
+            "type": "'onDeepLinkReceived'"
+          },
+          {
+            "name": "listenerFunc",
+            "docs": "",
+            "type": "(URL: Pubweb) => void"
+          }
+        ],
+        "returns": "Promise<PluginListenerHandle> & PluginListenerHandle",
+        "tags": [
+          {
+            "name": "param",
+            "text": "success Success callback."
+          },
+          {
+            "name": "param",
+            "text": "success.deepLinkURL"
+          },
+          {
+            "name": "param",
+            "text": "success.webLinkURL"
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback.\nAndroid only API"
+          }
+        ],
+        "docs": "Gets the deeplink/weblink URL, if the app was opened via a Responsys deeplink. \n\nOnly for Android. For iOS use the document listener.\n\n<br/><br/>This should be called everytime the app comes to the foreground.",
+        "complexTypes": [
+          "PluginListenerHandle",
+          "Pubweb"
+        ],
+        "slug": "addlistenerondeeplinkreceived"
+      },
+      {
+        "name": "setDelayRichPushDisplay",
+        "signature": "(options: { enabled: boolean; }) => Promise<Callback>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ enabled: boolean; }"
+          }
+        ],
+        "returns": "Promise<Callback>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "enabled Value of type Boolean."
+          },
+          {
+            "name": "param",
+            "text": "success Success callback."
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback."
+          }
+        ],
+        "docs": "Seting `true` this method will delay te rich push messages until `showRichPushMessage` API is called. \n\nUse this method when you are displaying intermediate screens like Login/Onboarding Screen.",
+        "complexTypes": [
+          "Callback"
+        ],
+        "slug": "setdelayrichpushdisplay"
+      },
+      {
+        "name": "showRichPushMessage",
+        "signature": "() => Promise<Callback>",
+        "parameters": [],
+        "returns": "Promise<Callback>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "success Success callback."
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback."
+          }
+        ],
+        "docs": "Call this API to display rich push messages if they are being delayed with `setDelayRichPushDisplay`.",
+        "complexTypes": [
+          "Callback"
+        ],
+        "slug": "showrichpushmessage"
+      },
+      {
+        "name": "isRichPushDelaySet",
+        "signature": "() => Promise<Callback>",
+        "parameters": [],
+        "returns": "Promise<Callback>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "success Success callback."
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback."
+          }
+        ],
+        "docs": "This api provides the status, if `setDelayRichPushDisplay` is enabled of not.",
+        "complexTypes": [
+          "Callback"
+        ],
+        "slug": "isrichpushdelayset"
+      },
+      {
+        "name": "setInterceptOpenURL",
+        "signature": "(options: { enabled: boolean; }) => Promise<Callback>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ enabled: boolean; }"
+          }
+        ],
+        "returns": "Promise<Callback>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "enabled Value of type Boolean."
+          },
+          {
+            "name": "param",
+            "text": "success Success callback."
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback."
+          }
+        ],
+        "docs": "Call this API to intercept deep links/Open URLs sent by Responsys. \nYou can intercept the URLs sent by Respinsys Open URL and overide SDK default behaviour.",
+        "complexTypes": [
+          "Callback"
+        ],
+        "slug": "setinterceptopenurl"
+      },
+      {
+        "name": "addListener",
+        "signature": "(eventName: 'setInterceptOpenURL', listenerFunc: (message: Callback) => void) => Promise<PluginListenerHandle> & PluginListenerHandle",
+        "parameters": [
+          {
+            "name": "eventName",
+            "docs": "",
+            "type": "'setInterceptOpenURL'"
+          },
+          {
+            "name": "listenerFunc",
+            "docs": "",
+            "type": "(message: Callback) => void"
+          }
+        ],
+        "returns": "Promise<PluginListenerHandle> & PluginListenerHandle",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "PluginListenerHandle",
+          "Callback"
+        ],
+        "slug": "addlistenersetinterceptopenurl"
+      },
+      {
+        "name": "trackConversionEvent",
+        "signature": "(options: { event: ConversionEvent; }) => Promise<Callback>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ event: ConversionEvent; }"
+          }
+        ],
+        "returns": "Promise<Callback>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "event"
+          },
+          {
+            "name": "param",
+            "text": "success Success callback."
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback."
+          }
+        ],
+        "docs": "Tracks the conversions for PUSHIO_ENGAGEMENT_METRIC_INAPP_PURCHASE and PUSHIO_ENGAGEMENT_METRIC_PURCHASE events.",
+        "complexTypes": [
+          "Callback",
+          "ConversionEvent"
+        ],
+        "slug": "trackconversionevent"
+      },
+      {
+        "name": "setNotificationSmallIconColor",
+        "signature": "(options: { color: string; }) => Promise<Callback>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ color: string; }"
+          }
+        ],
+        "returns": "Promise<Callback>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "Callback"
+        ],
+        "slug": "setnotificationsmalliconcolor"
+      },
+      {
+        "name": "setNotificationSmallIcon",
+        "signature": "(options: { resourceName: string; }) => Promise<Callback>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ resourceName: string; }"
+          }
+        ],
+        "returns": "Promise<Callback>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "resourceName Name of the resource in drawable/mipmap folder, without the file extension.\nAndroid only API"
+          }
+        ],
+        "docs": "Sets the given icon as the small icon in push notifications.",
+        "complexTypes": [
+          "Callback"
+        ],
+        "slug": "setnotificationsmallicon"
+      },
+      {
+        "name": "setNotificationLargeIcon",
+        "signature": "(options: { resourceName: string; }) => Promise<Callback>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ resourceName: string; }"
+          }
+        ],
+        "returns": "Promise<Callback>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "resourceName Name of the resource in drawable/mipmap folder, without the file extension.\nAndroid only API"
+          }
+        ],
+        "docs": "Sets the given icon as the large icon in push notifications.",
+        "complexTypes": [
+          "Callback"
+        ],
+        "slug": "setnotificationlargeicon"
+      },
+      {
+        "name": "setInAppMessageBannerHeight",
+        "signature": "(options: { height: number; }) => Promise<Callback>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ height: number; }"
+          }
+        ],
+        "returns": "Promise<Callback>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "height"
+          },
+          {
+            "name": "param",
+            "text": "success Success callback."
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback."
+          }
+        ],
+        "docs": "Sets the height of In-App banner message height.\n<br> Banner height should be between 100 and 200 (inclusive) density-independent unit.",
+        "complexTypes": [
+          "Callback"
+        ],
+        "slug": "setinappmessagebannerheight"
+      },
+      {
+        "name": "getInAppMessageBannerHeight",
+        "signature": "() => Promise<Callback>",
+        "parameters": [],
+        "returns": "Promise<Callback>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "success Success callback."
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback."
+          }
+        ],
+        "docs": "Returns the height of In-App Banner message.",
+        "complexTypes": [
+          "Callback"
+        ],
+        "slug": "getinappmessagebannerheight"
+      },
+      {
+        "name": "setStatusBarHiddenForIAMBannerInterstitial",
+        "signature": "(options: { hideStatusBar: boolean; }) => Promise<Callback>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ hideStatusBar: boolean; }"
+          }
+        ],
+        "returns": "Promise<Callback>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "hideStatusBar"
+          },
+          {
+            "name": "param",
+            "text": "success Success callback."
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback."
+          }
+        ],
+        "docs": "Sets the boolean to hide status bar of In-App Banner and Interstitial message\n<br> true to hide status bar otherwise false",
+        "complexTypes": [
+          "Callback"
+        ],
+        "slug": "setstatusbarhiddenforiambannerinterstitial"
+      },
+      {
+        "name": "isStatusBarHiddenForIAMBannerInterstitial",
+        "signature": "() => Promise<Callback>",
+        "parameters": [],
+        "returns": "Promise<Callback>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "success Success callback."
+          },
+          {
+            "name": "param",
+            "text": "failure Failure callback."
+          }
+        ],
+        "docs": "Returns the boolean value of status bar hidden for In-App Banner and Interstitial message.\n<br> true if status bar hidden otherwise false",
+        "complexTypes": [
+          "Callback"
+        ],
+        "slug": "isstatusbarhiddenforiambannerinterstitial"
+      }
+    ],
+    "properties": []
+  },
+  "interfaces": [
+    {
+      "name": "String",
+      "slug": "string",
+      "docs": "Allows manipulation and formatting of text strings and determination and location of substrings within strings.",
+      "tags": [],
+      "methods": [
+        {
+          "name": "toString",
+          "signature": "() => string",
+          "parameters": [],
+          "returns": "string",
+          "tags": [],
+          "docs": "Returns a string representation of a string.",
+          "complexTypes": [],
+          "slug": "tostring"
+        },
+        {
+          "name": "charAt",
+          "signature": "(pos: number) => string",
+          "parameters": [
+            {
+              "name": "pos",
+              "docs": "The zero-based index of the desired character.",
+              "type": "number"
+            }
+          ],
+          "returns": "string",
+          "tags": [
+            {
+              "name": "param",
+              "text": "pos The zero-based index of the desired character."
+            }
+          ],
+          "docs": "Returns the character at the specified index.",
+          "complexTypes": [],
+          "slug": "charat"
+        },
+        {
+          "name": "charCodeAt",
+          "signature": "(index: number) => number",
+          "parameters": [
+            {
+              "name": "index",
+              "docs": "The zero-based index of the desired character. If there is no character at the specified index, NaN is returned.",
+              "type": "number"
+            }
+          ],
+          "returns": "number",
+          "tags": [
+            {
+              "name": "param",
+              "text": "index The zero-based index of the desired character. If there is no character at the specified index, NaN is returned."
+            }
+          ],
+          "docs": "Returns the Unicode value of the character at the specified location.",
+          "complexTypes": [],
+          "slug": "charcodeat"
+        },
+        {
+          "name": "concat",
+          "signature": "(...strings: string[]) => string",
+          "parameters": [
+            {
+              "name": "strings",
+              "docs": "The strings to append to the end of the string.",
+              "type": "string[]"
+            }
+          ],
+          "returns": "string",
+          "tags": [
+            {
+              "name": "param",
+              "text": "strings The strings to append to the end of the string."
+            }
+          ],
+          "docs": "Returns a string that contains the concatenation of two or more strings.",
+          "complexTypes": [],
+          "slug": "concat"
+        },
+        {
+          "name": "indexOf",
+          "signature": "(searchString: string, position?: number | undefined) => number",
+          "parameters": [
+            {
+              "name": "searchString",
+              "docs": "The substring to search for in the string",
+              "type": "string"
+            },
+            {
+              "name": "position",
+              "docs": "The index at which to begin searching the String object. If omitted, search starts at the beginning of the string.",
+              "type": "number | undefined"
+            }
+          ],
+          "returns": "number",
+          "tags": [
+            {
+              "name": "param",
+              "text": "searchString The substring to search for in the string"
+            },
+            {
+              "name": "param",
+              "text": "position The index at which to begin searching the String object. If omitted, search starts at the beginning of the string."
+            }
+          ],
+          "docs": "Returns the position of the first occurrence of a substring.",
+          "complexTypes": [],
+          "slug": "indexof"
+        },
+        {
+          "name": "lastIndexOf",
+          "signature": "(searchString: string, position?: number | undefined) => number",
+          "parameters": [
+            {
+              "name": "searchString",
+              "docs": "The substring to search for.",
+              "type": "string"
+            },
+            {
+              "name": "position",
+              "docs": "The index at which to begin searching. If omitted, the search begins at the end of the string.",
+              "type": "number | undefined"
+            }
+          ],
+          "returns": "number",
+          "tags": [
+            {
+              "name": "param",
+              "text": "searchString The substring to search for."
+            },
+            {
+              "name": "param",
+              "text": "position The index at which to begin searching. If omitted, the search begins at the end of the string."
+            }
+          ],
+          "docs": "Returns the last occurrence of a substring in the string.",
+          "complexTypes": [],
+          "slug": "lastindexof"
+        },
+        {
+          "name": "localeCompare",
+          "signature": "(that: string) => number",
+          "parameters": [
+            {
+              "name": "that",
+              "docs": "String to compare to target string",
+              "type": "string"
+            }
+          ],
+          "returns": "number",
+          "tags": [
+            {
+              "name": "param",
+              "text": "that String to compare to target string"
+            }
+          ],
+          "docs": "Determines whether two strings are equivalent in the current locale.",
+          "complexTypes": [],
+          "slug": "localecompare"
+        },
+        {
+          "name": "match",
+          "signature": "(regexp: string | RegExp) => RegExpMatchArray | null",
+          "parameters": [
+            {
+              "name": "regexp",
+              "docs": "A variable name or string literal containing the regular expression pattern and flags.",
+              "type": "string | RegExp"
+            }
+          ],
+          "returns": "RegExpMatchArray | null",
+          "tags": [
+            {
+              "name": "param",
+              "text": "regexp A variable name or string literal containing the regular expression pattern and flags."
+            }
+          ],
+          "docs": "Matches a string with a regular expression, and returns an array containing the results of that search.",
+          "complexTypes": [
+            "RegExpMatchArray",
+            "RegExp"
+          ],
+          "slug": "match"
+        },
+        {
+          "name": "replace",
+          "signature": "(searchValue: string | RegExp, replaceValue: string) => string",
+          "parameters": [
+            {
+              "name": "searchValue",
+              "docs": "A string to search for.",
+              "type": "string | RegExp"
+            },
+            {
+              "name": "replaceValue",
+              "docs": "A string containing the text to replace for every successful match of searchValue in this string.",
+              "type": "string"
+            }
+          ],
+          "returns": "string",
+          "tags": [
+            {
+              "name": "param",
+              "text": "searchValue A string to search for."
+            },
+            {
+              "name": "param",
+              "text": "replaceValue A string containing the text to replace for every successful match of searchValue in this string."
+            }
+          ],
+          "docs": "Replaces text in a string, using a regular expression or search string.",
+          "complexTypes": [
+            "RegExp"
+          ],
+          "slug": "replace"
+        },
+        {
+          "name": "replace",
+          "signature": "(searchValue: string | RegExp, replacer: (substring: string, ...args: any[]) => string) => string",
+          "parameters": [
+            {
+              "name": "searchValue",
+              "docs": "A string to search for.",
+              "type": "string | RegExp"
+            },
+            {
+              "name": "replacer",
+              "docs": "A function that returns the replacement text.",
+              "type": "(substring: string, ...args: any[]) => string"
+            }
+          ],
+          "returns": "string",
+          "tags": [
+            {
+              "name": "param",
+              "text": "searchValue A string to search for."
+            },
+            {
+              "name": "param",
+              "text": "replacer A function that returns the replacement text."
+            }
+          ],
+          "docs": "Replaces text in a string, using a regular expression or search string.",
+          "complexTypes": [
+            "RegExp"
+          ],
+          "slug": "replace"
+        },
+        {
+          "name": "search",
+          "signature": "(regexp: string | RegExp) => number",
+          "parameters": [
+            {
+              "name": "regexp",
+              "docs": "The regular expression pattern and applicable flags.",
+              "type": "string | RegExp"
+            }
+          ],
+          "returns": "number",
+          "tags": [
+            {
+              "name": "param",
+              "text": "regexp The regular expression pattern and applicable flags."
+            }
+          ],
+          "docs": "Finds the first substring match in a regular expression search.",
+          "complexTypes": [
+            "RegExp"
+          ],
+          "slug": "search"
+        },
+        {
+          "name": "slice",
+          "signature": "(start?: number | undefined, end?: number | undefined) => string",
+          "parameters": [
+            {
+              "name": "start",
+              "docs": "The index to the beginning of the specified portion of stringObj.",
+              "type": "number | undefined"
+            },
+            {
+              "name": "end",
+              "docs": "The index to the end of the specified portion of stringObj. The substring includes the characters up to, but not including, the character indicated by end.\r\nIf this value is not specified, the substring continues to the end of stringObj.",
+              "type": "number | undefined"
+            }
+          ],
+          "returns": "string",
+          "tags": [
+            {
+              "name": "param",
+              "text": "start The index to the beginning of the specified portion of stringObj."
+            },
+            {
+              "name": "param",
+              "text": "end The index to the end of the specified portion of stringObj. The substring includes the characters up to, but not including, the character indicated by end.\r\nIf this value is not specified, the substring continues to the end of stringObj."
+            }
+          ],
+          "docs": "Returns a section of a string.",
+          "complexTypes": [],
+          "slug": "slice"
+        },
+        {
+          "name": "split",
+          "signature": "(separator: string | RegExp, limit?: number | undefined) => string[]",
+          "parameters": [
+            {
+              "name": "separator",
+              "docs": "A string that identifies character or characters to use in separating the string. If omitted, a single-element array containing the entire string is returned.",
+              "type": "string | RegExp"
+            },
+            {
+              "name": "limit",
+              "docs": "A value used to limit the number of elements returned in the array.",
+              "type": "number | undefined"
+            }
+          ],
+          "returns": "string[]",
+          "tags": [
+            {
+              "name": "param",
+              "text": "separator A string that identifies character or characters to use in separating the string. If omitted, a single-element array containing the entire string is returned."
+            },
+            {
+              "name": "param",
+              "text": "limit A value used to limit the number of elements returned in the array."
+            }
+          ],
+          "docs": "Split a string into substrings using the specified separator and return them as an array.",
+          "complexTypes": [
+            "RegExp"
+          ],
+          "slug": "split"
+        },
+        {
+          "name": "substring",
+          "signature": "(start: number, end?: number | undefined) => string",
+          "parameters": [
+            {
+              "name": "start",
+              "docs": "The zero-based index number indicating the beginning of the substring.",
+              "type": "number"
+            },
+            {
+              "name": "end",
+              "docs": "Zero-based index number indicating the end of the substring. The substring includes the characters up to, but not including, the character indicated by end.\r\nIf end is omitted, the characters from start through the end of the original string are returned.",
+              "type": "number | undefined"
+            }
+          ],
+          "returns": "string",
+          "tags": [
+            {
+              "name": "param",
+              "text": "start The zero-based index number indicating the beginning of the substring."
+            },
+            {
+              "name": "param",
+              "text": "end Zero-based index number indicating the end of the substring. The substring includes the characters up to, but not including, the character indicated by end.\r\nIf end is omitted, the characters from start through the end of the original string are returned."
+            }
+          ],
+          "docs": "Returns the substring at the specified location within a String object.",
+          "complexTypes": [],
+          "slug": "substring"
+        },
+        {
+          "name": "toLowerCase",
+          "signature": "() => string",
+          "parameters": [],
+          "returns": "string",
+          "tags": [],
+          "docs": "Converts all the alphabetic characters in a string to lowercase.",
+          "complexTypes": [],
+          "slug": "tolowercase"
+        },
+        {
+          "name": "toLocaleLowerCase",
+          "signature": "(locales?: string | string[] | undefined) => string",
+          "parameters": [
+            {
+              "name": "locales",
+              "docs": "",
+              "type": "string | string[] | undefined"
+            }
+          ],
+          "returns": "string",
+          "tags": [],
+          "docs": "Converts all alphabetic characters to lowercase, taking into account the host environment's current locale.",
+          "complexTypes": [],
+          "slug": "tolocalelowercase"
+        },
+        {
+          "name": "toUpperCase",
+          "signature": "() => string",
+          "parameters": [],
+          "returns": "string",
+          "tags": [],
+          "docs": "Converts all the alphabetic characters in a string to uppercase.",
+          "complexTypes": [],
+          "slug": "touppercase"
+        },
+        {
+          "name": "toLocaleUpperCase",
+          "signature": "(locales?: string | string[] | undefined) => string",
+          "parameters": [
+            {
+              "name": "locales",
+              "docs": "",
+              "type": "string | string[] | undefined"
+            }
+          ],
+          "returns": "string",
+          "tags": [],
+          "docs": "Returns a string where all alphabetic characters have been converted to uppercase, taking into account the host environment's current locale.",
+          "complexTypes": [],
+          "slug": "tolocaleuppercase"
+        },
+        {
+          "name": "trim",
+          "signature": "() => string",
+          "parameters": [],
+          "returns": "string",
+          "tags": [],
+          "docs": "Removes the leading and trailing white space and line terminator characters from a string.",
+          "complexTypes": [],
+          "slug": "trim"
+        },
+        {
+          "name": "substr",
+          "signature": "(from: number, length?: number | undefined) => string",
+          "parameters": [
+            {
+              "name": "from",
+              "docs": "The starting position of the desired substring. The index of the first character in the string is zero.",
+              "type": "number"
+            },
+            {
+              "name": "length",
+              "docs": "The number of characters to include in the returned substring.",
+              "type": "number | undefined"
+            }
+          ],
+          "returns": "string",
+          "tags": [
+            {
+              "name": "param",
+              "text": "from The starting position of the desired substring. The index of the first character in the string is zero."
+            },
+            {
+              "name": "param",
+              "text": "length The number of characters to include in the returned substring."
+            }
+          ],
+          "docs": "Gets a substring beginning at the specified location and having the specified length.",
+          "complexTypes": [],
+          "slug": "substr"
+        },
+        {
+          "name": "valueOf",
+          "signature": "() => string",
+          "parameters": [],
+          "returns": "string",
+          "tags": [],
+          "docs": "Returns the primitive value of the specified object.",
+          "complexTypes": [],
+          "slug": "valueof"
+        }
+      ],
+      "properties": [
+        {
+          "name": "length",
+          "tags": [],
+          "docs": "Returns the length of a String object.",
+          "complexTypes": [],
+          "type": "number"
+        }
+      ]
+    },
+    {
+      "name": "RegExpMatchArray",
+      "slug": "regexpmatcharray",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "index",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "number | undefined"
+        },
+        {
+          "name": "input",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string | undefined"
+        }
+      ]
+    },
+    {
+      "name": "RegExp",
+      "slug": "regexp",
+      "docs": "",
+      "tags": [],
+      "methods": [
+        {
+          "name": "exec",
+          "signature": "(string: string) => RegExpExecArray | null",
+          "parameters": [
+            {
+              "name": "string",
+              "docs": "The String object or string literal on which to perform the search.",
+              "type": "string"
+            }
+          ],
+          "returns": "RegExpExecArray | null",
+          "tags": [
+            {
+              "name": "param",
+              "text": "string The String object or string literal on which to perform the search."
+            }
+          ],
+          "docs": "Executes a search on a string using a regular expression pattern, and returns an array containing the results of that search.",
+          "complexTypes": [
+            "RegExpExecArray"
+          ],
+          "slug": "exec"
+        },
+        {
+          "name": "test",
+          "signature": "(string: string) => boolean",
+          "parameters": [
+            {
+              "name": "string",
+              "docs": "String on which to perform the search.",
+              "type": "string"
+            }
+          ],
+          "returns": "boolean",
+          "tags": [
+            {
+              "name": "param",
+              "text": "string String on which to perform the search."
+            }
+          ],
+          "docs": "Returns a Boolean value that indicates whether or not a pattern exists in a searched string.",
+          "complexTypes": [],
+          "slug": "test"
+        },
+        {
+          "name": "compile",
+          "signature": "() => this",
+          "parameters": [],
+          "returns": "this",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "slug": "compile"
+        }
+      ],
+      "properties": [
+        {
+          "name": "source",
+          "tags": [],
+          "docs": "Returns a copy of the text of the regular expression pattern. Read-only. The regExp argument is a Regular expression object. It can be a variable name or a literal.",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "global",
+          "tags": [],
+          "docs": "Returns a Boolean value indicating the state of the global flag (g) used with a regular expression. Default is false. Read-only.",
+          "complexTypes": [],
+          "type": "boolean"
+        },
+        {
+          "name": "ignoreCase",
+          "tags": [],
+          "docs": "Returns a Boolean value indicating the state of the ignoreCase flag (i) used with a regular expression. Default is false. Read-only.",
+          "complexTypes": [],
+          "type": "boolean"
+        },
+        {
+          "name": "multiline",
+          "tags": [],
+          "docs": "Returns a Boolean value indicating the state of the multiline flag (m) used with a regular expression. Default is false. Read-only.",
+          "complexTypes": [],
+          "type": "boolean"
+        },
+        {
+          "name": "lastIndex",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "number"
+        }
+      ]
+    },
+    {
+      "name": "RegExpExecArray",
+      "slug": "regexpexecarray",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "index",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "number"
+        },
+        {
+          "name": "input",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "PluginListenerHandle",
+      "slug": "pluginlistenerhandle",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "remove",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "() => Promise<void>"
+        }
+      ]
+    },
+    {
+      "name": "ConversionEvent",
+      "slug": "conversionevent",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "orderId",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "orderTotal",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "number"
+        },
+        {
+          "name": "orderQuantity",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "number"
+        },
+        {
+          "name": "conversionType",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "number"
+        },
+        {
+          "name": "customProperties",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "object"
+        }
+      ]
+    }
+  ],
+  "enums": [
+    {
+      "name": "EngagementType",
+      "slug": "engagementtype",
+      "members": [
+        {
+          "name": "PUSHIO_ENGAGEMENT_METRIC_LAUNCH",
+          "value": "1",
+          "tags": [],
+          "docs": "Used by SDK to record app launch via push notification. Apps should avoid using this."
+        },
+        {
+          "name": "PUSHIO_ENGAGEMENT_METRIC_ACTIVE_SESSION",
+          "value": "2",
+          "tags": [],
+          "docs": "Used by SDK to record push receipt when app is in foreground. Apps should avoid using this."
+        },
+        {
+          "name": "PUSHIO_ENGAGEMENT_METRIC_INAPP_PURCHASE",
+          "value": "3",
+          "tags": [],
+          "docs": "User did an In-App purchase."
+        },
+        {
+          "name": "PUSHIO_ENGAGEMENT_METRIC_PREMIUM_CONTENT",
+          "value": "4",
+          "tags": [],
+          "docs": "User accessed premium content in the app."
+        },
+        {
+          "name": "PUSHIO_ENGAGEMENT_METRIC_SOCIAL",
+          "value": "5",
+          "tags": [],
+          "docs": "User did a social action, for example: share, like etc."
+        },
+        {
+          "name": "PUSHIO_ENGAGEMENT_METRIC_PURCHASE",
+          "value": "7",
+          "tags": [],
+          "docs": "User did a commerce (or physical goods) purchase in the app"
+        },
+        {
+          "name": "PUSHIO_ENGAGEMENT_METRIC_OTHER",
+          "value": "6",
+          "tags": [],
+          "docs": "Any other user action that doesn't fit under other engagement-types"
+        }
+      ]
+    }
+  ],
+  "typeAliases": [
+    {
+      "name": "Callback",
+      "slug": "callback",
+      "docs": "",
+      "types": [
+        {
+          "text": "{\n    //Success callback. \n    success:any|undefined; \n    //Failure callback.\n    error:string;\n    \n  }",
+          "complexTypes": []
+        }
+      ]
+    },
+    {
+      "name": "InteractiveNotificationCategory",
+      "slug": "interactivenotificationcategory",
+      "docs": "",
+      "types": [
+        {
+          "text": "{\n\n  orcl_category:string,\n  orcl_btns:InteractiveNotificationButton[]\n}",
+          "complexTypes": [
+            "InteractiveNotificationButton"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "InteractiveNotificationButton",
+      "slug": "interactivenotificationbutton",
+      "docs": "",
+      "types": [
+        {
+          "text": "{\n  id:string,\n  action:string,\n  label:string\n\n}",
+          "complexTypes": []
+        }
+      ]
+    },
+    {
+      "name": "Preference",
+      "slug": "preference",
+      "docs": "",
+      "types": [
+        {
+          "text": "{\n\n  //- Unique Identifier for this preference.\n  key:string; \n  //Human-Readable description of this preference.\n label:string;\n //Data type of this preference. Possible values: 'STRING', 'NUMBER', 'BOOLEAN'.\n type:string; \n //Preference value.\n value:string;\n}",
+          "complexTypes": []
+        }
+      ]
+    },
+    {
+      "name": "MessageCenterResult",
+      "slug": "messagecenterresult",
+      "docs": "",
+      "types": [
+        {
+          "text": "{\n  messageCenter:string,\n  messages:MessageCenterMessage[],\n  errorReason:string\n}",
+          "complexTypes": [
+            "MessageCenterMessage"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MessageCenterMessage",
+      "slug": "messagecentermessage",
+      "docs": "",
+      "types": [
+        {
+          "text": "{\n\n  messageID:string,\n  subject:string,\n  message:string,\n  iconURL:string,\n  messageCenterName:string,\n  deeplinkURL:string,\n  richMessageHTML:string,\n  richMessageURL:string,\n  sentTimestamp:string,\n  expiryTimestamp:string,\n  customKeyValuePairs:object,\n}",
+          "complexTypes": []
+        }
+      ]
+    },
+    {
+      "name": "MCRichContentResult",
+      "slug": "mcrichcontentresult",
+      "docs": "",
+      "types": [
+        {
+          "text": "{\n  messageId:string,\n  richContent:string,\n  errorReason:string\n}",
+          "complexTypes": []
+        }
+      ]
+    },
+    {
+      "name": "RemoteMessage",
+      "slug": "remotemessage",
+      "docs": "",
+      "types": [
+        {
+          "text": "{\n  to:string,\n  collapseKey:string,\n  messageId:string,\n  messageType:string,\n  ttl:string,\n  data:object\n\n}",
+          "complexTypes": []
+        }
+      ]
+    },
+    {
+      "name": "Pubweb",
+      "slug": "pubweb",
+      "docs": "",
+      "types": [
+        {
+          "text": "{\ndeeplinkURL:string\nweblinkURL:string\nrequestURL:string\nisPubwebURLType:boolean\nerror:string\n}",
+          "complexTypes": []
+        }
+      ]
+    },
+    {
+      "name": "RegionResult",
+      "slug": "regionresult",
+      "docs": "",
+      "types": [
+        {
+          "text": "{\n\n  regionID:string,\n  regionType:string,\n  error:string\n}",
+          "complexTypes": []
+        }
+      ]
+    },
+    {
+      "name": "GeoRegion",
+      "slug": "georegion",
+      "docs": "",
+      "types": [
+        {
+          "text": "{\n\n  geofenceId:string,\n  geofenceName:string,\n  zoneName:string,\n  zoneId:string,\n  source:string,\n  deviceBearing:number,\n  deviceSpeed:number,\n  dwellTime:number,\n  extra:object\n}",
+          "complexTypes": []
+        }
+      ]
+    },
+    {
+      "name": "BeaconRegion",
+      "slug": "beaconregion",
+      "docs": "",
+      "types": [
+        {
+          "text": "{\n  beaconId:string,\n  beaconName:string,\n  beaconTag:string,\n  beaconProximity:string,\n  iBeaconUUID:string,\n  iBeaconMajor:number,\n  iBeaconMinor:number,\n  eddyStoneId1:string,\n  eddyStoneId2:string,\n  zoneName:string,\n  zoneId:string,\n  source:string,\n  dwellTime:number,\n  extra:object\n\n}",
+          "complexTypes": []
+        }
+      ]
+    }
+  ],
+  "pluginConfigs": [
+    {
+      "name": "PushIOManager",
+      "slug": "pushiomanager",
+      "properties": [
+        {
+          "name": "interceptOpenURL",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "boolean"
+        }
+      ],
+      "docs": ""
+    }
+  ]
+}
