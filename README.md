@@ -64,11 +64,28 @@ Before installing the plugin, you must setup your app to receive push notificati
 
 Download the plugin,
 ```shell
-git clone https://github.com/capacitor-pushiomanager
+git clone https://github.com/pundixit/capacitor-pushiomanager
 ```
 
+### For Android
+- Create a new directory  - `PushIOManager` inside your app's `android` directory.
+- Download the SDK native binary from [here](https://www.oracle.com/downloads/applications/cx/responsys-mobile-sdk.html) and place the .aar file in this `android/PushIOManager/` directory.
+- Inside the `android/PushIOManager` directory, create a file `build.gradle` with the following code:
 
-> For iOS - Copy `PushIOManager.xcframework`  and place it in the plugin  `PATH_TO_Capacitor-plugin-pushiomanager_DIRECTORY/frameworks/` folder before adding plugin to project. 
+	```gradle
+	configurations.maybeCreate("default")
+	artifacts.add("default", file('PushIOManager-6.53.1.aar'))
+	```		
+
+- Add the following to your project-wide `settings.gradle` file:
+
+	```gradle
+	include ':PushIOManager'
+	project(':PushIOManager').projectDir = new File(rootProject.projectDir, './PushIOManager')
+	```
+
+### For iOS 
+- Copy `PushIOManager.xcframework`  and place it in the plugin  `PATH_TO_Capacitor-plugin-pushiomanager_DIRECTORY/frameworks/` folder before adding plugin to project. 
 
 
 The plugin can be installed with the Capacitor CLI,
