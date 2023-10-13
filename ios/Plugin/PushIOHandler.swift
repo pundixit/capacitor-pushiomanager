@@ -189,9 +189,9 @@ let capacitor_pushio_errorDomain = "capacitor_pushiomanager"
         
     }
 
-    @objc public func declarePreference(key:String, value:String, type:PIOPreferenceType, error:NSErrorPointer) -> Void  {
+    @objc public func declarePreference(key:String, label:String, type:PIOPreferenceType, error:NSErrorPointer) -> Void  {
         
-        PushIOManager.sharedInstance().declarePreference(key, label: value, type: type, error: error)
+        PushIOManager.sharedInstance().declarePreference(key, label: label, type: type, error: error)
 
     }
 

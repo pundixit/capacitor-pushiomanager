@@ -304,7 +304,7 @@ public class PushIOManagerPlugin: CAPPlugin {
     // MARK: Preference
     @objc func declarePreference(_ call: CAPPluginCall) {
 
-        if let key = call.getString("key"), let value = call.getString("label") {
+        if let key = call.getString("key"), let label = call.getString("label") {
             var type:PIOPreferenceType?
             
             if let inputType = call.getAny("type") {
@@ -319,14 +319,14 @@ public class PushIOManagerPlugin: CAPPlugin {
             }
             
             if let type =  type {
-                pushIOHandler.declarePreference(key: key, value: value, type: type, error: nil)
+                pushIOHandler.declarePreference(key: key, label: label, type: type, error: nil)
                 
                 call.resolve([:]);
             } else {
                 call.reject("Preference type can't be NULL. Should be \"STRING\" or \"NUMBER\" or \"BOOLEAN\"")
             }
         }else{
-            call.reject("provide proper key value")
+            call.reject("provide proper key label")
         }
     }
 
@@ -397,7 +397,7 @@ public class PushIOManagerPlugin: CAPPlugin {
 
    @objc func removePreference(_ call: CAPPluginCall) {
 
-       if let key:String = call.getString("value") {
+       if let key:String = call.getString("key") {
             var error:NSError?
            pushIOHandler.removePreference(key: key, error: &error)
             if let error =  error {

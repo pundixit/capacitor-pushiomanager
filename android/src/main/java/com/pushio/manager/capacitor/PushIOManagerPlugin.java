@@ -248,7 +248,7 @@ public class PushIOManagerPlugin extends Plugin {
     public void declarePreference(PluginCall call){
         try {
             final String key = call.getString("key");
-            final String label = call.getString("value");
+            final String label = call.getString("label");
             final String type = call.getString("type");
             if (!TextUtils.isEmpty(key) && !TextUtils.isEmpty(type)) {
                 PushIOPreference.Type preferenceType = PushIOPreference.Type.valueOf(type);
