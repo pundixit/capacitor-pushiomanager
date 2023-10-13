@@ -4,5 +4,5 @@
     <string name="title_activity_main">capacitor-react-sampleapp</string>
     <string name="package_name">com.sampleApp.cap</string>
     <string name="custom_url_scheme">com.sampleApp.cap</string>
-    <string name="uri_identifier">pio-ABEnkj6LXGJHxDBe7EKAWf8S4</string>
+    <string name="uri_identifier">pio-YOUR_API_KEY</string>
 </resources>
