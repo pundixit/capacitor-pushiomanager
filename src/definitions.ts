@@ -357,17 +357,19 @@ setDelayRegistration(options:{delayRegistration:boolean}):Promise<Callback>;
 * @param {function} [failure] Failure callback.
 */
 isDelayRegistration():Promise<Callback>;
- 
-  
-  /**
+
+/**
  * Registers this app installation with Responsys.
  * 
+ * @param {boolean} pushNotificationsEnabled Use only if your app's targetSdk is > = 33.
+ * Pass `true` to enable push notifications, `false` otherwise. Android Only.
+ * Passing `true` will cause runtime permission dialog for push notification permission to be displayed.
  * @param {boolean} useLocation Whether to send location data along with the registration request. Passing `true` will show the default system location permission dialog prompt.
  * (User location is not available on iOS platform.)
  * @param {function} [success] Success callback. 
  * @param {function} [failure] Failure callback.
- */
-registerApp(options:{useLocation:boolean}):Promise<Callback>;
+*/
+registerApp(options: {pushNotificationsEnabled: boolean, useLocation: boolean }): Promise<Callback>;
 
 /**
  * Asks user permissions for all push notifications types. i.e.: Sound/Badge/Alert types. 

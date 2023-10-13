@@ -56,7 +56,7 @@ public class PushIOManagerPlugin extends Plugin {
 
     @Override
     public void load() {
-        mPushIOManager = PushIOManager.getInstance(getActivity().getApplicationContext());
+        mPushIOManager = PushIOManager.getInstance(getContext().getApplicationContext());
     }
 
     @PluginMethod
@@ -224,7 +224,7 @@ public class PushIOManagerPlugin extends Plugin {
             @Override
             public void onPushIOSuccess() {
                 JSObject ret = new JSObject();
-                ret.put("value","success");
+                ret.put("success", null);
                 call.resolve(ret);
             }
 
@@ -235,7 +235,16 @@ public class PushIOManagerPlugin extends Plugin {
                 call.resolve(ret);
             }
         });
-        mPushIOManager.registerApp(isUseLocation);
+
+        Boolean isPushNotificationEnabled = call.getBoolean("pushNotificationsEnabled");
+         Log.v(TAG, "isPushNotificationEnabled: "+ isPushNotificationEnabled);
+
+        if (isPushNotificationEnabled != null) {
+            mPushIOManager.registerApp(isPushNotificationEnabled, isUseLocation);
+        } else {
+            Log.v(TAG, "isPushNotificationEnabled is null");
+            mPushIOManager.registerApp(isUseLocation);
+        }
     }
 
     @PluginMethod
@@ -269,14 +278,25 @@ public class PushIOManagerPlugin extends Plugin {
     @PluginMethod
     public void getPreferences(PluginCall call) {
         List<PushIOPreference> preferences = mPushIOManager.getPreferences();
-        JSObject ret = new JSObject();
-        ret.put("value", PushIOManagerPluginUtils.preferencesAsJsArray(preferences));
-        call.resolve(ret);
+        JSArray prefs = PushIOManagerPluginUtils.preferencesAsJsArray(preferences);
+        if (prefs != null) {
+            JSObject ret = new JSObject();
+            ret.put("success", prefs);
+            call.resolve(ret);
+        } else {
+            call.reject("Error fetching preferences");
+        }
     }
 
     @PluginMethod
     public void getPreference(PluginCall call) {
         String key = call.getString("key");
+
+        if (TextUtils.isEmpty(key)) {
+            call.reject("Preference key is null");
+            return;
+        }
+
         PushIOPreference value = mPushIOManager.getPreference(key);
 
         if (value != null) {

@@ -46,8 +46,6 @@ Before installing the plugin, you must setup your app to receive push notificati
 - [Get FCM Credentials](https://docs.oracle.com/en/cloud/saas/marketing/responsys-develop-mobile/android/gcm-credentials) 
 - Log in to the [Responsys Mobile App Developer Console](https://docs.oracle.com/en/cloud/saas/marketing/responsys-develop-mobile/dev-console/login/) and enter your FCM credentials (Project ID and Server API Key) for your Android app.
 - Download the `pushio_config.json` file generated from your credentials and include it in your project's `platforms/android/src/main/assets` folder.
-- Copy `PushIOManager-6.53.aar`  and place it in the project's `android/src/main/libs` folder. 
-
 
 #### For iOS
 - [Generate Auth Key](https://docs.oracle.com/en/cloud/saas/marketing/responsys-develop-mobile/ios/auth-key/) 
@@ -69,7 +67,7 @@ git clone https://github.com/pundixit/capacitor-pushiomanager
 
 ### For Android
 - Create a new directory  - `PushIOManager` inside your app's `android` directory.
-- Download the SDK native binary from [here](https://www.oracle.com/downloads/applications/cx/responsys-mobile-sdk.html) and place the .aar file in this `android/PushIOManager/` directory.
+- Download the SDK native binary v6.53.1 from [here](https://www.oracle.com/downloads/applications/cx/responsys-mobile-sdk.html) and place the .aar file in this `android/PushIOManager/` directory.
 - Inside the `android/PushIOManager` directory, create a file `build.gradle` with the following code:
 
 	```gradle

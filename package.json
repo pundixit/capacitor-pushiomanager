@@ -1,6 +1,6 @@
 {
   "name": "@oracle/capacitor-pushiomanager",
-  "version": "6.53.0",
+  "version": "6.53.1",
   "description": "Capacitor module for Responsys Mobile SDK",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",

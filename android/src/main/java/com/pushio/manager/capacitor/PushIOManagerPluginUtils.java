@@ -113,6 +113,7 @@ public class PushIOManagerPluginUtils {
 
             } catch (Exception e) {
                 Log.v(TAG, "Exception: " + e.getMessage());
+                return null;
             }
         }
 
