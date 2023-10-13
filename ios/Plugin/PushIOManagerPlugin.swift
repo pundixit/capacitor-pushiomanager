@@ -207,36 +207,6 @@ public class PushIOManagerPlugin: CAPPlugin {
         
     }
     
-//    @objc func configureAndRegister(_ call: CAPPluginCall) {
-//    
-//        do {
-//            
-//         let filename = call.getString("filename")
-//            
-//          try  pushIOHandler.configure(filename) { error, message in
-//                if let error =  error as? NSError{
-//                    call.failureCallback(error)
-//                } else {
-//                    
-//                    self.pushIOHandler.registerForAllRemoteNotificationTypes { error, message in
-//                        if let error =  error as? NSError {
-//                            call.failureCallback(error)
-//                        } else {
-//                            try  self.pushIOHandler.registerApp { error, response in
-//                                
-//                                call.result(response, error as NSError?)
-//                            }
-//                        }
-//                    }
-//                    
-//                }
-//            }
-//        } catch let error {
-//            call.reject(error.localizedDescription);
-//        }
-//        
-//    }
-    
     @objc func registerApp(_ call: CAPPluginCall) {
         
         do {
@@ -373,8 +343,8 @@ public class PushIOManagerPlugin: CAPPlugin {
 
     @objc func getPreference(_ call: CAPPluginCall) {
 
-        if let value = call.getString("value"){
-            if let preference = pushIOHandler.getPreference(key: value),let json = preference.dictionaryFromPreference()?.json(){
+        if let key = call.getString("key"){
+            if let preference = pushIOHandler.getPreference(key: key),let json = preference.dictionaryFromPreference()?.json(){
                     call.resolve(["success": json])
             } else {
                 call.resolve(["failure":"preference is not available"])
