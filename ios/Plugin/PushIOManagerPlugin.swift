@@ -335,24 +335,20 @@ public class PushIOManagerPlugin: CAPPlugin {
         if let preferences:[PIOPreference] = pushIOHandler.getPreferences(), let json = preferences.json() {
             call.resolve(["success": json])
         } else {
-            call.resolve(["failure":"Preference is not available"])
+            call.resolve(["failure": "Preferences not available"])
         }
-       
- 
     }
 
     @objc func getPreference(_ call: CAPPluginCall) {
 
         if let key = call.getString("key"){
-            if let preference = pushIOHandler.getPreference(key: key),let json = preference.dictionaryFromPreference()?.json(){
-                    call.resolve(["success": json])
+            if let preference = pushIOHandler.getPreference(key: key),let prefDict = preference.dictionaryFromPreference(){
+                call.resolve(prefDict)
             } else {
-                call.resolve(["failure":"preference is not available"])
+                call.resolve(["failure": "Preference not found"])
             }
-            
-            
         } else {
-            call.resolve(["failure":"provide preference key"])
+            call.resolve(["failure": "Preference key is null"])
         }
         
         

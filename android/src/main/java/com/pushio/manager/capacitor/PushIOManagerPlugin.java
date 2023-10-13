@@ -145,8 +145,6 @@ public class PushIOManagerPlugin extends Plugin {
 
     }
 
-
-
     @PluginMethod
     public void getAdvertisingID(PluginCall call) {
         String value = mPushIOManager.getAdvertisingID();
@@ -172,7 +170,7 @@ public class PushIOManagerPlugin extends Plugin {
                 call.resolve();
             } else {
                 JSObject ret = new JSObject();
-                ret.put("failure","Error reading parameter");
+                ret.put("failure", "Error reading parameter");
                 call.resolve(ret);
             }
         } catch (Exception e) {
@@ -195,7 +193,6 @@ public class PushIOManagerPlugin extends Plugin {
         call.resolve();
     }
 
-
     @PluginMethod
     public void configure(PluginCall call) {
         String fileName = call.getString("filename");
@@ -203,11 +200,11 @@ public class PushIOManagerPlugin extends Plugin {
             mPushIOManager.configure(fileName, new PIOConfigurationListener() {
                 @Override
                 public void onSDKConfigured(Exception e) {
-                    if (e == null){
+                    if (e == null) {
                         JSObject ret = new JSObject();
-                        ret.put("value","success");
+                        ret.put("value", "success");
                         call.resolve(ret);
-                    }else{
+                    } else {
                         call.reject(e.getMessage());
                     }
                 }
@@ -231,13 +228,13 @@ public class PushIOManagerPlugin extends Plugin {
             @Override
             public void onPushIOError(String s) {
                 JSObject ret = new JSObject();
-                ret.put("failure",s);
+                ret.put("failure", s);
                 call.resolve(ret);
             }
         });
 
         Boolean isPushNotificationEnabled = call.getBoolean("pushNotificationsEnabled");
-         Log.v(TAG, "isPushNotificationEnabled: "+ isPushNotificationEnabled);
+        Log.v(TAG, "isPushNotificationEnabled: " + isPushNotificationEnabled);
 
         if (isPushNotificationEnabled != null) {
             mPushIOManager.registerApp(isPushNotificationEnabled, isUseLocation);
@@ -254,7 +251,7 @@ public class PushIOManagerPlugin extends Plugin {
     }
 
     @PluginMethod
-    public void declarePreference(PluginCall call){
+    public void declarePreference(PluginCall call) {
         try {
             final String key = call.getString("key");
             final String label = call.getString("label");
@@ -284,7 +281,9 @@ public class PushIOManagerPlugin extends Plugin {
             ret.put("success", prefs);
             call.resolve(ret);
         } else {
-            call.reject("Error fetching preferences");
+            JSObject ret = new JSObject();
+            ret.put("failure", "Preferences not available");
+            call.resolve(ret);
         }
     }
 
@@ -293,26 +292,51 @@ public class PushIOManagerPlugin extends Plugin {
         String key = call.getString("key");
 
         if (TextUtils.isEmpty(key)) {
-            call.reject("Preference key is null");
+            JSObject ret = new JSObject();
+            ret.put("failure", "Preference key is null");
+            call.resolve(ret);
             return;
         }
 
-        PushIOPreference value = mPushIOManager.getPreference(key);
+        PushIOPreference preference = mPushIOManager.getPreference(key);
 
-        if (value != null) {
-            JSObject jsonObject = new JSObject();
+        if (preference != null) {
             try {
-                jsonObject.put("key", value.getKey());
-                jsonObject.put("value", value.getValue());
-                jsonObject.put("label", value.getLabel());
-                jsonObject.put("type", value.getKey());
-                call.resolve(jsonObject);
+                JSObject jsObject = new JSObject();
+                jsObject.put("key", preference.getKey());
+                jsObject.put("label", preference.getLabel());
+                
+                final PushIOPreference.Type type = preference.getType();
+                final Object value = preference.getValue();
+
+                if (type == PushIOPreference.Type.STRING) {
+                    jsObject.put("value", String.valueOf(value));
+
+                } else if (type == PushIOPreference.Type.NUMBER) {
+
+                    if (value instanceof Double) {
+                        jsObject.put("value", (Double) value);
+                    } else if (value instanceof Integer) {
+                        jsObject.put("value", (Integer) value);
+                    }
+
+                } else if (type == PushIOPreference.Type.BOOLEAN) {
+                    jsObject.put("value", (Boolean) value);
+                }
+
+                jsObject.put("type", type.toString());
+
+                call.resolve(jsObject);
             } catch (Exception e) {
                 Log.v(TAG, "Exception: " + e.getMessage());
-                call.reject(e.getMessage());
+                JSObject ret = new JSObject();
+                ret.put("failure", e.getMessage());
+                call.resolve(ret);
             }
         } else {
-            call.reject("Preference Not found");
+            JSObject ret = new JSObject();
+            ret.put("failure", "Preference not found");
+            call.resolve(ret);
         }
     }
 
@@ -329,7 +353,7 @@ public class PushIOManagerPlugin extends Plugin {
                 ret.put("success", isPrefSet);
                 call.resolve(ret);
             } else {
-               call.reject("Error reading key");
+                call.reject("Error reading key");
             }
         } catch (ValidationException e) {
             Log.v(TAG, "Exception: " + e.getMessage());
@@ -355,7 +379,7 @@ public class PushIOManagerPlugin extends Plugin {
             Log.v(TAG, "Exception: " + e.getMessage());
             call.reject(e.getMessage());
         }
-        
+
     }
 
     @PluginMethod
@@ -388,7 +412,7 @@ public class PushIOManagerPlugin extends Plugin {
                 call.resolve();
             } else {
                 JSObject ret = new JSObject();
-                ret.put("failure","Error reading parameter");
+                ret.put("failure", "Error reading parameter");
                 call.resolve(ret);
             }
         } catch (Exception e) {
@@ -396,7 +420,6 @@ public class PushIOManagerPlugin extends Plugin {
             call.reject(e.getMessage());
         }
     }
-
 
     @PluginMethod
     public void clearAllPreferences(PluginCall call) {
@@ -421,7 +444,7 @@ public class PushIOManagerPlugin extends Plugin {
     public void getNotificationStacked(PluginCall call) {
         boolean result = mPushIOManager.getNotificationStacked();
         JSObject ret = new JSObject();
-        ret.put("value",result);
+        ret.put("value", result);
         call.resolve(ret);
     }
 
@@ -438,11 +461,11 @@ public class PushIOManagerPlugin extends Plugin {
                 }
                 mPushIOManager.trackEvent(eventType, properties);
                 JSObject ret = new JSObject();
-                ret.put("value","success");
+                ret.put("value", "success");
                 call.resolve(ret);
             } else {
                 JSObject ret = new JSObject();
-                ret.put("failure","event value is required");
+                ret.put("failure", "event value is required");
                 call.resolve(ret);
             }
         } catch (JSONException e) {
@@ -452,8 +475,8 @@ public class PushIOManagerPlugin extends Plugin {
     }
 
     @PluginMethod
-    public void onMessageCenterUpdated (PluginCall call) {
-        if(call != null){
+    public void onMessageCenterUpdated(PluginCall call) {
+        if (call != null) {
             mPushIOManager.addMessageCenterUpdateListener(new PIOMessageCenterUpdateListener() {
                 @Override
                 public void onUpdate(List<String> messageCenters) {
@@ -468,7 +491,7 @@ public class PushIOManagerPlugin extends Plugin {
     @PluginMethod
     public void trackConversionEvent(PluginCall call) {
 
-        try {          
+        try {
             JSObject propertiesObject = call.getObject("event");
 
             PIOConversionEvent conversionEvent = new PIOConversionEvent();
@@ -477,10 +500,10 @@ public class PushIOManagerPlugin extends Plugin {
             conversionEvent.setOrderAmount(propertiesObject.getDouble("orderTotal"));
             conversionEvent.setOrderQuantity(propertiesObject.getInt("orderQuantity"));
 
-            if(propertiesObject.has("customProperties")){
+            if (propertiesObject.has("customProperties")) {
                 JSObject customPropertiesObject = propertiesObject.getJSObject("customProperties");
-    
-                if(customPropertiesObject != null){
+
+                if (customPropertiesObject != null) {
                     conversionEvent.setProperties(PushIOManagerPluginUtils.toMapStr(customPropertiesObject));
                 }
             }
@@ -541,9 +564,8 @@ public class PushIOManagerPlugin extends Plugin {
         }
     }
 
-
     @PluginMethod
-    public void trackEngagement(PluginCall call){
+    public void trackEngagement(PluginCall call) {
 
         try {
             int metric = call.getInt("metric");
@@ -557,14 +579,14 @@ public class PushIOManagerPlugin extends Plugin {
                 @Override
                 public void onEngagementSuccess() {
                     JSObject ret = new JSObject();
-                    ret.put("value","success");
+                    ret.put("value", "success");
                     call.resolve(ret);
                 }
 
                 @Override
                 public void onEngagementError(String s) {
                     JSObject ret = new JSObject();
-                    ret.put("failure",s);
+                    ret.put("failure", s);
                     call.resolve(ret);
                 }
             });
@@ -572,11 +594,11 @@ public class PushIOManagerPlugin extends Plugin {
             Log.v(TAG, "Exception: " + e.getMessage());
             call.reject(e.getMessage());
         }
-        
+
     }
 
     @PluginMethod
-    public void setLogLevel(PluginCall call){
+    public void setLogLevel(PluginCall call) {
 
         try {
 
@@ -588,11 +610,11 @@ public class PushIOManagerPlugin extends Plugin {
             Log.v(TAG, "Exception: " + e.getMessage());
             call.reject(e.getMessage());
         }
-        
+
     }
-    
+
     @PluginMethod
-    public void setLoggingEnabled(PluginCall call){
+    public void setLoggingEnabled(PluginCall call) {
 
         try {
 
@@ -604,11 +626,11 @@ public class PushIOManagerPlugin extends Plugin {
             Log.v(TAG, "Exception: " + e.getMessage());
             call.reject(e.getMessage());
         }
-        
+
     }
-    
+
     @PluginMethod
-    public void setCrashLoggingEnabled(PluginCall call){
+    public void setCrashLoggingEnabled(PluginCall call) {
 
         try {
 
@@ -621,15 +643,15 @@ public class PushIOManagerPlugin extends Plugin {
             Log.v(TAG, "Exception: " + e.getMessage());
             call.reject(e.getMessage());
         }
-        
-    } 
+
+    }
 
     @PluginMethod
-    public void setInAppMessageBannerHeight(PluginCall call){
-        try{
+    public void setInAppMessageBannerHeight(PluginCall call) {
+        try {
             int height = call.getInt("height");
             mPushIOManager.setInAppMessageBannerHeight(height);
-        }catch(Exception e){ 
+        } catch (Exception e) {
             Log.v(TAG, "Exception: " + e.getMessage());
             call.reject(e.getMessage());
         }
@@ -637,18 +659,18 @@ public class PushIOManagerPlugin extends Plugin {
 
     @PluginMethod
     public void getInAppMessageBannerHeight(PluginCall call) {
-        int  height = mPushIOManager.getInAppMessageBannerHeight();
+        int height = mPushIOManager.getInAppMessageBannerHeight();
         JSObject ret = new JSObject();
-        ret.put("value",height);
+        ret.put("value", height);
         call.resolve(ret);
     }
 
     @PluginMethod
-    public void setStatusBarHiddenForIAMBannerInterstitial(PluginCall call){
-        try{
+    public void setStatusBarHiddenForIAMBannerInterstitial(PluginCall call) {
+        try {
             boolean statusBarHidden = call.getBoolean("hideStatusBar");
             mPushIOManager.setStatusBarHiddenForIAMBannerInterstitial(statusBarHidden);
-        }catch(Exception e){
+        } catch (Exception e) {
             Log.v(TAG, "Exception: " + e.getMessage());
             call.reject(e.getMessage());
         }
@@ -656,16 +678,15 @@ public class PushIOManagerPlugin extends Plugin {
 
     @PluginMethod
     public void isStatusBarHiddenForIAMBannerInterstitial(PluginCall call) {
-        boolean  result = mPushIOManager.isStatusBarHiddenForIAMBannerInterstitial();
+        boolean result = mPushIOManager.isStatusBarHiddenForIAMBannerInterstitial();
         JSObject ret = new JSObject();
-        ret.put("value",result);
+        ret.put("value", result);
         call.resolve(ret);
     }
 
-
     @PluginMethod
     public void setNotificationSmallIconColor(PluginCall call) {
-        try{
+        try {
             String colorHex = call.getString("color");
             if (!TextUtils.isEmpty(colorHex)) {
                 final int color = Color.parseColor(colorHex);
@@ -679,7 +700,7 @@ public class PushIOManagerPlugin extends Plugin {
 
     @PluginMethod
     public void setNotificationSmallIcon(PluginCall call) {
-        try{
+        try {
             String resourceName = call.getString("resourceName");
             if (!TextUtils.isEmpty(resourceName)) {
 
@@ -706,7 +727,7 @@ public class PushIOManagerPlugin extends Plugin {
     @PluginMethod
     public void setNotificationLargeIcon(PluginCall call) {
 
-        try{
+        try {
             String resourceName = call.getString("resourceName");
             if (!TextUtils.isEmpty(resourceName)) {
 
