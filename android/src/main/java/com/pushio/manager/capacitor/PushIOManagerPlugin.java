@@ -304,12 +304,12 @@ public class PushIOManagerPlugin extends Plugin {
             final String value = call.getString("value");
 
             if (!TextUtils.isEmpty(key)) {
-                mPushIOManager.setPreference(key, value);
-                call.resolve();
-            } else {
+                boolean isPrefSet = mPushIOManager.setPreference(key, value);
                 JSObject ret = new JSObject();
-                ret.put("failure","Error reading parameter");
+                ret.put("success", isPrefSet);
                 call.resolve(ret);
+            } else {
+               call.reject("Error reading key");
             }
         } catch (ValidationException e) {
             Log.v(TAG, "Exception: " + e.getMessage());
@@ -324,12 +324,12 @@ public class PushIOManagerPlugin extends Plugin {
             final Double value = call.getDouble("value");
 
             if (!TextUtils.isEmpty(key)) {
-                mPushIOManager.setPreference(key, value);
-                call.resolve();
-            } else {
+                boolean isPrefSet = mPushIOManager.setPreference(key, value);
                 JSObject ret = new JSObject();
-                ret.put("failure","Error reading parameter");
+                ret.put("success", isPrefSet);
                 call.resolve(ret);
+            } else {
+                call.reject("Error reading key");
             }
         } catch (ValidationException e) {
             Log.v(TAG, "Exception: " + e.getMessage());
@@ -345,12 +345,12 @@ public class PushIOManagerPlugin extends Plugin {
             final boolean value = call.getBoolean("value");
 
             if (!TextUtils.isEmpty(key)) {
-                mPushIOManager.setPreference(key, value);
-                call.resolve();
-            } else {
+                boolean isPrefSet = mPushIOManager.setPreference(key, value);
                 JSObject ret = new JSObject();
-                ret.put("failure","Error reading parameter");
+                ret.put("success", isPrefSet);
                 call.resolve(ret);
+            } else {
+                call.reject("Error reading key");
             }
         } catch (ValidationException e) {
             Log.v(TAG, "Exception: " + e.getMessage());
