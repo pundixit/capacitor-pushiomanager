@@ -183,9 +183,9 @@ public class PushIOManagerPlugin extends Plugin {
 
     @PluginMethod
     public void getRegisteredUserId(PluginCall call) {
-        String value = mPushIOManager.getRegisteredUserId();
+        String userId = mPushIOManager.getRegisteredUserId();
         JSObject ret = new JSObject();
-        ret.put("value",value);
+        ret.put("userId", userId);
         call.resolve(ret);
     }
 

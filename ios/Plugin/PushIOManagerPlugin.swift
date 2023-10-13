@@ -279,7 +279,7 @@ public class PushIOManagerPlugin: CAPPlugin {
     @objc func getRegisteredUserId(_ call: CAPPluginCall){
         
         let userId = pushIOHandler.getRegisteredUserId()
-        call.successCallback(userId)
+        call.resolve(["userId":userId])
     }
 
     @objc func unregisterUserId(_ call: CAPPluginCall){
