@@ -572,7 +572,7 @@ return (
     <TextInput onChange={ handleBadgeInputChange} value={badgeCount} placeholder="Enter Badge Count"/>
     <Button onClick={ updateBadgeCount}>SET BADGE COUNT</Button>
     </Card>
-      <Info>&#169; 2022 Oracle and/or its affiliates. All rights reserved.</Info>
+        <Info>&#169; 2023 Oracle and/or its affiliates. All rights reserved.</Info>
     </List>
     <ToastContainer position="bottom-center" hideProgressBar={true}/>
   </Container>
