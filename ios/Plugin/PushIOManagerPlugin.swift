@@ -304,18 +304,16 @@ public class PushIOManagerPlugin: CAPPlugin {
     // MARK: Preference
     @objc func declarePreference(_ call: CAPPluginCall) {
 
-        if let key = call.getString("key"), let label = call.getString("label") {
-            var type:PIOPreferenceType?
+        if let key = call.getString("key"), let label = call.getString("label"), let typeStr = call.getString("type") {
             
-            if let inputType = call.getAny("type") {
-                
-                if let _ = inputType as? String {
-                    type  = PIOPreferenceType.string;
-                } else if let _ = inputType as? NSNumber {
-                    type  = PIOPreferenceType.numeric
-                } else if let _ = inputType as? Bool {
-                    type  = PIOPreferenceType.boolean
-                }
+           var type:PIOPreferenceType?
+
+            if typeStr == "STRING"{
+                type  = PIOPreferenceType.string
+            } else if typeStr == "NUMBER" {
+                type = PIOPreferenceType.numeric
+            } else if (typeStr == "BOOLEAN") {
+                type = PIOPreferenceType.boolean
             }
             
             if let type =  type {
@@ -332,8 +330,8 @@ public class PushIOManagerPlugin: CAPPlugin {
 
     @objc func getPreferences(_ call: CAPPluginCall) {
 
-        if let preferences:[PIOPreference] = pushIOHandler.getPreferences(), let json = preferences.json() {
-            call.resolve(["success": json])
+        if let preferences:[PIOPreference] = pushIOHandler.getPreferences() {
+            call.resolve(["success": preferences.toList()])
         } else {
             call.resolve(["failure": "Preferences not available"])
         }

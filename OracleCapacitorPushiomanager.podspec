@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target  = '13.0'
   s.dependency 'Capacitor'
   s.swift_version = '5.1'
-  s.vendored_frameworks = 'frameworks/PushIOManager.xcframework'
+  s.vendored_frameworks = 'ios/frameworks/PushIOManager.xcframework'
   s.preserve_paths = "ios/frameworks/PushIOManager.xcframework" 
   s.pod_target_xcconfig = { 'OTHER_LDFLAGS' => '-ObjC' }
   s.libraries      = 'sqlite3'

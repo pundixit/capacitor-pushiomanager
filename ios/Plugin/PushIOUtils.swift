@@ -185,7 +185,7 @@ extension PIOPreference {
         }
         
         var dictionary:[String:Any] = ["key":key,"value":value,"label":label]
-        
+
         switch self.type {
         case PIOPreferenceType.string:
                 dictionary["type"] = "STRING";
@@ -198,7 +198,6 @@ extension PIOPreference {
         }
         return dictionary;
     }
-    
 }
 
 extension Sequence where Iterator.Element == NSDictionary {
@@ -263,14 +262,18 @@ extension Sequence where Iterator.Element == PIOMCMessage {
 
 extension Sequence where Iterator.Element == PIOPreference {
     
-    func json()->String? {
-        guard let jsonData = try? JSONSerialization.data(withJSONObject: self,
-                    options: [.prettyPrinted]) else {
-            return nil
+    func toList()->[[String:Any]]{
+      var list:[[String:Any]] = [];
+        
+        for preference:PIOPreference in self {
+            
+            if let preferenceDict = preference.dictionaryFromPreference() {
+                list.append(preferenceDict)
+            }
         }
-        return String(data: jsonData, encoding: .utf8)
+        
+        return list
     }
-
 }
 
 
