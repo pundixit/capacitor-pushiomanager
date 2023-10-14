@@ -12,7 +12,7 @@
     "dist/",
     "ios/Plugin/",
     "src/",
-    "CapacitorPushiomanager.podspec"
+    "OracleCapacitorPushiomanager.podspec"
   ],
   "author": "",
   "license": "UPL-1.0",
